@@ -9,16 +9,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #0a0c10;
-      --paper: #f5f2ed;
-      --gold: #c9a84c;
-      --gold-light: #e8d5a3;
-      --steel: #2a3545;
-      --mist: #8a9ab0;
-      --accent: #1a4a6b;
-      --accent-bright: #2d7ab5;
-      --red: #8b2635;
-      --line: rgba(201,168,76,0.25);
+      --ink: #0b1628;
+      --paper: #f0f4f8;
+      --gold: #0077a8;
+      --gold-light: #3ca0d0;
+      --citron: #c8d630;
+      --citron-light: #dde76a;
+      --steel: #1e2d45;
+      --mist: #8ba3be;
+      --accent: #005f87;
+      --accent-bright: #0091d5;
+      --red: #d14343;
+      --line: rgba(0,119,168,0.2);
     }
 
     html { scroll-behavior: smooth; }
@@ -34,8 +36,8 @@
     body::before {
       content: '';
       position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.6;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.4;
     }
 
     /* ─── NAV ─── */
@@ -44,7 +46,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.4rem 4rem;
       border-bottom: 1px solid var(--line);
-      background: rgba(10,12,16,0.85);
+      background: rgba(11,22,40,0.92);
       backdrop-filter: blur(18px);
     }
 
@@ -76,14 +78,15 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 0.65rem 1.6rem;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      border: 1px solid var(--citron);
+      color: var(--citron);
       background: transparent;
       cursor: pointer;
       text-decoration: none;
       transition: all 0.25s;
+      border-radius: 3px;
     }
-    .nav-cta:hover { background: var(--gold); color: var(--ink); }
+    .nav-cta:hover { background: var(--citron); color: var(--ink); }
 
     /* ─── HERO ─── */
     .hero {
@@ -97,17 +100,17 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(26,74,107,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.07) 0%, transparent 60%),
-        linear-gradient(160deg, #0a0c10 0%, #0f1520 50%, #0a0c10 100%);
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(0,119,168,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(200,214,48,0.05) 0%, transparent 60%),
+        linear-gradient(160deg, #0b1628 0%, #0f1e35 50%, #0b1628 100%);
     }
 
     /* Animated grid lines */
     .hero-grid {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(0,119,168,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,119,168,0.05) 1px, transparent 1px);
       background-size: 60px 60px;
       animation: gridShift 25s linear infinite;
     }
@@ -119,21 +122,27 @@
     .hero-left {
       position: relative; z-index: 2;
       display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 4rem 6rem 4rem;
+      padding: 7rem 3.5rem 4rem 4rem;
     }
 
     .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.8rem;
-      display: flex; align-items: center; gap: 1rem;
+      color: var(--citron);
+      margin-bottom: 1.6rem;
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid rgba(200,214,48,0.35);
+      border-left: 3px solid var(--citron);
+      background: rgba(200,214,48,0.06);
+      text-shadow: 0 0 16px rgba(200,214,48,0.3);
       opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
     }
     .hero-eyebrow::before {
-      content: ''; width: 40px; height: 1px; background: var(--gold);
+      content: ''; width: 28px; height: 2px; background: linear-gradient(90deg, var(--citron), transparent);
     }
 
     .hero-title {
@@ -145,7 +154,7 @@
       margin-bottom: 1.6rem;
       opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
     }
-    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-title em { font-style: italic; color: var(--citron); }
     .hero-title strong { font-weight: 600; display: block; }
 
     .hero-sub {
@@ -154,7 +163,7 @@
       line-height: 1.9;
       color: var(--mist);
       max-width: 420px;
-      margin-bottom: 3rem;
+      margin-bottom: 2.2rem;
       opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
     }
 
@@ -164,8 +173,8 @@
     }
 
     .btn-primary {
-      padding: 1rem 2.4rem;
-      background: var(--gold);
+      padding: 0.85rem 2.2rem;
+      background: var(--citron);
       color: var(--ink);
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem;
@@ -176,48 +185,50 @@
       display: inline-block;
       transition: all 0.25s;
       font-weight: 500;
+      border-radius: 3px;
     }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+    .btn-primary:hover { background: var(--citron-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,214,48,0.25); }
 
     .btn-ghost {
-      padding: 1rem 2.4rem;
+      padding: 0.85rem 2.2rem;
       background: transparent;
       color: var(--paper);
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      border: 1px solid rgba(245,242,237,0.2);
+      border: 1px solid rgba(240,244,248,0.2);
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
       transition: all 0.25s;
+      border-radius: 3px;
     }
-    .btn-ghost:hover { border-color: var(--paper); }
+    .btn-ghost:hover { border-color: var(--paper); background: rgba(255,255,255,0.05); }
 
     /* ─── HERO RIGHT — Dashboard Mockup ─── */
     .hero-right {
       position: relative; z-index: 2;
       display: flex; align-items: center; justify-content: center;
-      padding: 8rem 4rem 6rem 2rem;
+      padding: 7rem 3.5rem 4rem 2rem;
       opacity: 0; animation: fadeIn 1.2s 1s forwards;
     }
 
     .dashboard-mockup {
       width: 100%;
       max-width: 520px;
-      background: rgba(15,21,32,0.9);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 4px;
+      background: rgba(15,26,46,0.9);
+      border: 1px solid rgba(0,119,168,0.2);
+      border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.1);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,119,168,0.1);
     }
 
     .dash-header {
-      background: rgba(26,74,107,0.3);
+      background: rgba(0,95,135,0.2);
       padding: 0.8rem 1.2rem;
       display: flex; align-items: center; gap: 0.6rem;
-      border-bottom: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(0,119,168,0.15);
     }
     .dash-dot { width: 8px; height: 8px; border-radius: 50%; }
     .dash-dot:nth-child(1) { background: var(--red); }
@@ -237,7 +248,7 @@
 
     .dash-kpi {
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,168,76,0.12);
+      border: 1px solid rgba(0,119,168,0.12);
       padding: 0.9rem;
       border-radius: 2px;
     }
@@ -260,7 +271,7 @@
 
     .dash-chart-area {
       background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(201,168,76,0.1);
+      border: 1px solid rgba(0,119,168,0.1);
       border-radius: 2px;
       padding: 1rem;
       margin-bottom: 1rem;
@@ -282,7 +293,7 @@
     .bar:nth-child(1) { height: 45%; animation-delay: 1.3s; }
     .bar:nth-child(2) { height: 72%; animation-delay: 1.4s; }
     .bar:nth-child(3) { height: 58%; animation-delay: 1.5s; }
-    .bar:nth-child(4) { height: 88%; animation-delay: 1.6s; background: linear-gradient(to top, var(--gold), #f0c060); }
+    .bar:nth-child(4) { height: 88%; animation-delay: 1.6s; background: linear-gradient(to top, var(--citron), #e0ea60); }
     .bar:nth-child(5) { height: 64%; animation-delay: 1.7s; }
     .bar:nth-child(6) { height: 79%; animation-delay: 1.8s; }
     .bar:nth-child(7) { height: 53%; animation-delay: 1.9s; }
@@ -328,7 +339,7 @@
     .stats-bar {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      background: rgba(26,74,107,0.08);
+      background: rgba(0,95,135,0.08);
       padding: 2rem 4rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -352,7 +363,7 @@
     }
 
     /* ─── SECTION BASE ─── */
-    section { padding: 7rem 4rem; }
+    section { padding: 5rem 4rem; }
 
     .section-eyebrow {
       font-family: 'DM Mono', monospace;
@@ -372,7 +383,7 @@
       line-height: 1.1;
       margin-bottom: 1.2rem;
     }
-    .section-title em { font-style: italic; color: var(--gold); }
+    .section-title em { font-style: italic; color: var(--citron); }
 
     .section-body {
       font-family: 'DM Mono', monospace;
@@ -383,14 +394,14 @@
     }
 
     /* ─── CAPABILITIES ─── */
-    .capabilities { background: #0a0c10; }
+    .capabilities { background: var(--ink); }
 
     .cap-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--line);
-      margin-top: 4rem;
+      margin-top: 3rem;
       border: 1px solid var(--line);
     }
 
@@ -409,7 +420,7 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .cap-card:hover { background: rgba(26,74,107,0.12); }
+    .cap-card:hover { background: rgba(0,95,135,0.1); }
     .cap-card:hover::before { opacity: 1; }
 
     .cap-icon {
@@ -450,15 +461,15 @@
 
     /* ─── HOW IT WORKS ─── */
     .how-it-works {
-      background: linear-gradient(180deg, #0a0c10 0%, #0d1520 50%, #0a0c10 100%);
+      background: linear-gradient(180deg, var(--ink) 0%, #0d1a30 50%, var(--ink) 100%);
       position: relative;
     }
 
     .how-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      margin-top: 4rem;
+      gap: 4rem;
+      margin-top: 3rem;
       align-items: center;
     }
 
@@ -503,7 +514,7 @@
     /* Process visual */
     .process-visual {
       position: relative;
-      background: rgba(15,21,32,0.8);
+      background: rgba(15,26,46,0.8);
       border: 1px solid var(--line);
       padding: 2.4rem;
       border-radius: 2px;
@@ -542,13 +553,13 @@
     .ai-output {
       margin-top: 1.4rem;
       padding: 1rem;
-      background: rgba(201,168,76,0.06);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 2px;
+      background: rgba(200,214,48,0.05);
+      border: 1px solid rgba(200,214,48,0.2);
+      border-radius: 3px;
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
       line-height: 1.7;
-      color: var(--gold-light);
+      color: var(--citron-light);
     }
 
     .pulse-dot {
@@ -634,7 +645,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
     .pillar-feature:last-child { border-bottom: none; }
-    .pillar-feature::before { content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 0.1rem; }
+    .pillar-feature::before { content: none; }
     .pillar-feature strong { color: var(--paper); display: block; font-size: 0.76rem; margin-bottom: 0.2rem; font-family: 'Syne', sans-serif; font-weight: 600; }
 
     .pillar-visual {
@@ -707,7 +718,7 @@
 
     /* ─── EXPERTISE / SERVICES ─── */
     .expertise {
-      background: linear-gradient(135deg, #0d1520 0%, #0a0c10 100%);
+      background: linear-gradient(135deg, #0d1a30 0%, var(--ink) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -717,13 +728,13 @@
       right: -200px; top: -200px;
       width: 600px; height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,119,168,0.04) 0%, transparent 70%);
     }
 
     .expertise-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      gap: 4rem;
       align-items: center;
     }
 
@@ -740,11 +751,11 @@
     .service-card::after {
       content: '';
       position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--gold));
+      background: linear-gradient(90deg, var(--accent-bright), var(--citron));
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .service-card:hover { border-color: rgba(201,168,76,0.25); background: rgba(26,74,107,0.08); }
+    .service-card:hover { border-color: rgba(0,119,168,0.3); background: rgba(0,95,135,0.08); }
     .service-card:hover::after { opacity: 1; }
 
     .service-icon { font-size: 1.5rem; margin-bottom: 1rem; }
@@ -753,12 +764,12 @@
 
     /* ─── TESTIMONIAL / TRUST ─── */
     .trust {
-      background: #0a0c10;
+      background: var(--ink);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    .trust-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: center; }
+    .trust-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }
 
     .trust-quote {
       font-family: 'Cormorant Garamond', serif;
@@ -768,7 +779,7 @@
       line-height: 1.4;
       color: var(--paper);
     }
-    .trust-quote em { color: var(--gold); }
+    .trust-quote em { color: var(--citron); }
 
     .trust-items { display: flex; flex-direction: column; gap: 2rem; }
     .trust-item {
@@ -789,16 +800,23 @@
 
     /* ─── CTA ─── */
     .cta-section {
-      background: linear-gradient(160deg, #0d1520 0%, var(--ink) 100%);
-      padding: 9rem 4rem;
-      text-align: center;
+      background: linear-gradient(160deg, #0d1a30 0%, var(--ink) 100%);
+      padding: 5rem 4rem;
       position: relative;
       overflow: hidden;
     }
     .cta-section::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(26,74,107,0.25) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(0,119,168,0.15) 0%, transparent 70%);
+    }
+
+    .cta-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
     }
 
     .cta-eyebrow {
@@ -807,37 +825,118 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.2rem;
     }
     .cta-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 5rem);
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
       font-weight: 300;
       line-height: 1.1;
-      margin-bottom: 1.4rem;
-      position: relative;
+      margin-bottom: 1.2rem;
     }
-    .cta-title em { font-style: italic; color: var(--gold); }
+    .cta-title em { font-style: italic; color: var(--citron); }
 
     .cta-sub {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--mist);
-      max-width: 480px;
-      margin: 0 auto 3rem;
+      max-width: 460px;
       line-height: 1.9;
-      position: relative;
     }
 
-    .cta-actions {
-      display: flex; gap: 1.2rem; justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
+    /* ─── CONTACT FORM ─── */
+    .contact-form {
+      background: rgba(15,26,46,0.7);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 2.4rem;
+      backdrop-filter: blur(10px);
     }
+    .contact-form-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.6rem;
+      color: var(--paper);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mist);
+    }
+    .form-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,119,168,0.2);
+      border-radius: 3px;
+      padding: 0.7rem 0.9rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--paper);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-input::placeholder { color: rgba(139,163,190,0.4); }
+    .form-input:focus {
+      border-color: var(--citron);
+      background: rgba(200,214,48,0.03);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-submit {
+      margin-top: 0.6rem;
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--citron);
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .form-submit:hover {
+      background: var(--citron-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(200,214,48,0.2);
+    }
+    .form-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .form-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      margin-top: 0.8rem;
+      text-align: center;
+      min-height: 1.2rem;
+    }
+    .form-status.success { color: #2ea043; }
+    .form-status.error { color: var(--red); }
 
     /* ─── FOOTER ─── */
     footer {
-      background: #06080c;
+      background: #071020;
       border-top: 1px solid var(--line);
       padding: 4rem;
     }
@@ -912,13 +1011,15 @@
       .hero-left { padding: 7rem 2rem 3rem; }
       .hero-right { display: none; }
       .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
-      section { padding: 5rem 2rem; }
+      section { padding: 3.5rem 2rem; }
       .cap-grid { grid-template-columns: 1fr; }
       .how-layout { grid-template-columns: 1fr; gap: 3rem; }
       .pillar-tabs { grid-template-columns: 1fr; }
       .pillar-content.active { grid-template-columns: 1fr; }
       .expertise-layout { grid-template-columns: 1fr; gap: 3rem; }
       .trust-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .cta-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
       .footer-layout { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
   </style>
@@ -930,7 +1031,6 @@
   <div class="nav-logo">Dub<span class="logo-paren">(e)</span>AI</div>
   <div class="nav-links">
     <a href="#capabilities">Platform</a>
-    <a href="#pillars">Solutions</a>
     <a href="#expertise">Services</a>
     <a href="#trust">Why Dub(e)AI</a>
     <a href="#contact" class="nav-cta">Request Demo</a>
@@ -954,7 +1054,6 @@
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Request a Demo</a>
-      <a href="#pillars" class="btn-ghost">Explore Solutions</a>
     </div>
   </div>
 
@@ -1012,18 +1111,10 @@
 </section>
 
 <!-- ─── STATS ─── -->
-<div class="stats-bar">
+<div class="stats-bar" style="grid-template-columns: repeat(2, 1fr);">
   <div class="stat-item">
     <div class="stat-num">100%</div>
     <div class="stat-label">Custom Built</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">3</div>
-    <div class="stat-label">Core GRC Modules</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">AI</div>
-    <div class="stat-label">Native Intelligence</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">∞</div>
@@ -1142,162 +1233,6 @@
   </div>
 </section>
 
-<!-- ─── THREE PILLARS ─── -->
-<section class="pillars" id="pillars">
-  <div class="pillars-header">
-    <div class="section-eyebrow">The Three Pillars</div>
-    <h2 class="section-title">Purpose-built for every<br>dimension of <em>GRC</em></h2>
-  </div>
-
-  <div class="pillar-tabs">
-    <div class="pillar-tab active" onclick="switchPillar(0)">
-      <div class="pillar-num">01 —</div>
-      <div class="pillar-name">Risk Management</div>
-      <div class="pillar-tagline">Identify, assess, and own risk across the enterprise with AI-augmented insight.</div>
-    </div>
-    <div class="pillar-tab" onclick="switchPillar(1)">
-      <div class="pillar-num">02 —</div>
-      <div class="pillar-name">Internal Controls</div>
-      <div class="pillar-tagline">Design, operate, and test controls with automated evidence and owner accountability.</div>
-    </div>
-    <div class="pillar-tab" onclick="switchPillar(2)">
-      <div class="pillar-num">03 —</div>
-      <div class="pillar-name">Audit Management</div>
-      <div class="pillar-tagline">AI-assisted audit planning, execution, and reporting — end to end.</div>
-    </div>
-  </div>
-
-  <!-- Risk Content -->
-  <div class="pillar-content active" id="pillar-0">
-    <ul class="pillar-features">
-      <li class="pillar-feature"><div><strong>Enterprise Risk Register</strong>Centralised, structured register with dynamic risk scoring, ownership, and escalation workflows.</div></li>
-      <li class="pillar-feature"><div><strong>AI Risk Identification</strong>NLP-based scanning of internal data, news, and industry signals to surface emerging risks automatically.</div></li>
-      <li class="pillar-feature"><div><strong>Risk Heat Maps</strong>Visual likelihood/impact matrices with drill-down to underlying data, live-updated as assessments change.</div></li>
-      <li class="pillar-feature"><div><strong>Risk Appetite Monitoring</strong>Define tolerance thresholds; Dub(e)AI alerts you when exposure approaches or breaches appetite limits.</div></li>
-    </ul>
-    <div class="pillar-visual">
-      <div class="pillar-visual-title">Risk Heat Map — Q4 2024</div>
-      <div class="matrix-grid">
-        <div class="matrix-cell cell-header">5</div>
-        <div class="matrix-cell cell-med"></div>
-        <div class="matrix-cell cell-high"></div>
-        <div class="matrix-cell cell-crit">R4</div>
-        <div class="matrix-cell cell-crit"></div>
-        <div class="matrix-cell cell-header">4</div>
-        <div class="matrix-cell cell-low"></div>
-        <div class="matrix-cell cell-med">R7</div>
-        <div class="matrix-cell cell-high">R2</div>
-        <div class="matrix-cell cell-crit"></div>
-        <div class="matrix-cell cell-header">3</div>
-        <div class="matrix-cell cell-low">R9</div>
-        <div class="matrix-cell cell-low"></div>
-        <div class="matrix-cell cell-med">R5</div>
-        <div class="matrix-cell cell-high">R1</div>
-        <div class="matrix-cell cell-header">2</div>
-        <div class="matrix-cell cell-low"></div>
-        <div class="matrix-cell cell-low">R8</div>
-        <div class="matrix-cell cell-low"></div>
-        <div class="matrix-cell cell-med">R6</div>
-        <div class="matrix-cell cell-header">1</div>
-        <div class="matrix-cell cell-low">R3</div>
-        <div class="matrix-cell cell-low"></div>
-        <div class="matrix-cell cell-low"></div>
-        <div class="matrix-cell cell-low"></div>
-      </div>
-      <div style="display:flex; gap:1rem; margin-top:0.8rem; flex-wrap:wrap;">
-        <span style="font-family:'DM Mono',monospace;font-size:0.52rem;display:flex;align-items:center;gap:0.4rem;color:var(--mist)"><span style="width:8px;height:8px;background:rgba(46,160,67,0.4);display:inline-block;"></span>Low</span>
-        <span style="font-family:'DM Mono',monospace;font-size:0.52rem;display:flex;align-items:center;gap:0.4rem;color:var(--mist)"><span style="width:8px;height:8px;background:rgba(232,160,32,0.5);display:inline-block;"></span>Medium</span>
-        <span style="font-family:'DM Mono',monospace;font-size:0.52rem;display:flex;align-items:center;gap:0.4rem;color:var(--mist)"><span style="width:8px;height:8px;background:rgba(232,80,50,0.5);display:inline-block;"></span>High</span>
-        <span style="font-family:'DM Mono',monospace;font-size:0.52rem;display:flex;align-items:center;gap:0.4rem;color:var(--mist)"><span style="width:8px;height:8px;background:rgba(139,38,53,0.7);display:inline-block;"></span>Critical</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Controls Content -->
-  <div class="pillar-content" id="pillar-1">
-    <ul class="pillar-features">
-      <li class="pillar-feature"><div><strong>Control Library & Mapping</strong>Pre-loaded frameworks (COSO, ISO 27001, SOX, GDPR) or build your own. Map controls to risks, processes, and objectives.</div></li>
-      <li class="pillar-feature"><div><strong>Automated Testing Workflows</strong>Schedule and assign control tests; automate evidence requests; track completion with real-time status dashboards.</div></li>
-      <li class="pillar-feature"><div><strong>Deficiency Management</strong>Classify deficiencies by severity, assign remediation owners, track to closure with full audit trail.</div></li>
-      <li class="pillar-feature"><div><strong>MLOE / MLOD Scoring</strong>Machine-learning assisted Management's and Design effectiveness scoring for consistent, objective assessments.</div></li>
-    </ul>
-    <div class="pillar-visual">
-      <div class="pillar-visual-title">Control Effectiveness — by Domain</div>
-      <div class="ctrl-items">
-        <div class="ctrl-item">
-          <div class="ctrl-item-header"><span class="ctrl-item-name">IT General Controls</span><span class="ctrl-item-pct">91%</span></div>
-          <div class="ctrl-bar"><div class="ctrl-fill" style="width:91%"></div></div>
-        </div>
-        <div class="ctrl-item" style="margin-top:0.9rem;">
-          <div class="ctrl-item-header"><span class="ctrl-item-name">Financial Reporting</span><span class="ctrl-item-pct">87%</span></div>
-          <div class="ctrl-bar"><div class="ctrl-fill" style="width:87%"></div></div>
-        </div>
-        <div class="ctrl-item" style="margin-top:0.9rem;">
-          <div class="ctrl-item-header"><span class="ctrl-item-name">Procurement & AP</span><span class="ctrl-item-pct">74%</span></div>
-          <div class="ctrl-bar"><div class="ctrl-fill" style="width:74%;background:linear-gradient(90deg,#8b2635,#c04060);"></div></div>
-        </div>
-        <div class="ctrl-item" style="margin-top:0.9rem;">
-          <div class="ctrl-item-header"><span class="ctrl-item-name">HR & Payroll</span><span class="ctrl-item-pct">96%</span></div>
-          <div class="ctrl-bar"><div class="ctrl-fill" style="width:96%;background:linear-gradient(90deg,#1a6b3a,#2ea043);"></div></div>
-        </div>
-        <div class="ctrl-item" style="margin-top:0.9rem;">
-          <div class="ctrl-item-header"><span class="ctrl-item-name">Third Party / Vendor</span><span class="ctrl-item-pct">68%</span></div>
-          <div class="ctrl-bar"><div class="ctrl-fill" style="width:68%;background:linear-gradient(90deg,#8b2635,#c04060);"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Audit Content -->
-  <div class="pillar-content" id="pillar-2">
-    <ul class="pillar-features">
-      <li class="pillar-feature"><div><strong>Risk-Based Audit Planning</strong>AI suggests audit universe prioritisation based on risk scores, control weaknesses, and time since last audit.</div></li>
-      <li class="pillar-feature"><div><strong>Smart Workpaper Generation</strong>AI-assisted documentation of audit procedures, findings, and conclusions, reducing preparation time significantly.</div></li>
-      <li class="pillar-feature"><div><strong>Finding & Action Tracking</strong>Structured finding capture with root cause, recommendation, management response, and closure verification.</div></li>
-      <li class="pillar-feature"><div><strong>Board-Ready Reporting</strong>One-click generation of audit committee reports with executive summaries, status overviews, and trend analysis.</div></li>
-    </ul>
-    <div class="pillar-visual">
-      <div class="pillar-visual-title">Audit Programme — 2025</div>
-      <div class="audit-timeline">
-        <div class="timeline-item">
-          <div class="tl-dot" style="background:#2ea043;box-shadow:0 0 6px #2ea043;"></div>
-          <div class="tl-info">
-            <div class="tl-title">Revenue Recognition Controls</div>
-            <div class="tl-meta">Completed · Jan 2025 · 0 critical findings</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-dot" style="background:#2ea043;box-shadow:0 0 6px #2ea043;"></div>
-          <div class="tl-info">
-            <div class="tl-title">Cybersecurity & Access Management</div>
-            <div class="tl-meta">Completed · Feb 2025 · 2 high findings — 1 open</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-dot" style="background:#e8a020;box-shadow:0 0 6px #e8a020;"></div>
-          <div class="tl-info">
-            <div class="tl-title">Third Party Risk — Vendor Audit</div>
-            <div class="tl-meta">In Progress · Mar 2025 · Fieldwork stage</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-dot" style="background:rgba(138,154,176,0.4);"></div>
-          <div class="tl-info">
-            <div class="tl-title">Payroll & HR Compliance</div>
-            <div class="tl-meta">Planned · Q2 2025 · AI scoping in progress</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-dot" style="background:rgba(138,154,176,0.4);"></div>
-          <div class="tl-info">
-            <div class="tl-title">Financial Reporting — SOX Opinion</div>
-            <div class="tl-meta">Planned · Q3 2025</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ─── EXPERTISE ─── -->
 <section class="expertise" id="expertise">
@@ -1372,16 +1307,45 @@
 
 <!-- ─── CTA ─── -->
 <section class="cta-section" id="contact">
-  <div class="cta-eyebrow">Ready to transform your GRC?</div>
-  <h2 class="cta-title">
-    Let's build something<br><em>exceptional</em> together.
-  </h2>
-  <p class="cta-sub">
-    Schedule a discovery call with our GRC experts. We'll understand your environment and show you exactly how Dub(e)AI would work for your organisation.
-  </p>
-  <div class="cta-actions">
-    <a href="/cdn-cgi/l/email-protection#c3aba6afafac83a7b6a1a6eda6b6" class="btn-primary">Request a Demo</a>
-    <a href="/cdn-cgi/l/email-protection#91f9f4fdfdfed1f5e4f3f4bff4e4" class="btn-ghost">Contact Us</a>
+  <div class="cta-layout">
+    <div>
+      <div class="cta-eyebrow">Ready to transform your GRC?</div>
+      <h2 class="cta-title">
+        Let's build something<br><em>exceptional</em> together.
+      </h2>
+      <p class="cta-sub">
+        Schedule a discovery call with our GRC experts. We'll understand your environment and show you exactly how Dub(e)AI would work for your organisation.
+      </p>
+    </div>
+    <div class="contact-form" id="demo-form">
+      <div class="contact-form-title">Request a Demo</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="cf-name">Name *</label>
+          <input class="form-input" type="text" id="cf-name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-company">Company *</label>
+          <input class="form-input" type="text" id="cf-company" placeholder="Company name" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="cf-email">Email *</label>
+          <input class="form-input" type="email" id="cf-email" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-phone">Phone</label>
+          <input class="form-input" type="tel" id="cf-phone" placeholder="+49 ..." />
+        </div>
+      </div>
+      <div class="form-group full" style="margin-bottom:1rem;">
+        <label class="form-label" for="cf-message">Message</label>
+        <textarea class="form-input form-textarea" id="cf-message" placeholder="Tell us about your GRC needs..."></textarea>
+      </div>
+      <button class="form-submit" id="cf-submit" onclick="submitDemoForm()">Send Request</button>
+      <div class="form-status" id="cf-status"></div>
+    </div>
   </div>
 </section>
 
@@ -1428,13 +1392,56 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function switchPillar(index) {
-    document.querySelectorAll('.pillar-tab').forEach((t, i) => {
-      t.classList.toggle('active', i === index);
-    });
-    document.querySelectorAll('.pillar-content').forEach((c, i) => {
-      c.classList.toggle('active', i === index);
-    });
+  // Remove old pillar switching (no longer needed)
+
+  // ─── CONTACT FORM SUBMISSION ───
+  function submitDemoForm() {
+    const name = document.getElementById('cf-name').value.trim();
+    const company = document.getElementById('cf-company').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const status = document.getElementById('cf-status');
+    const btn = document.getElementById('cf-submit');
+
+    // Validation
+    if (!name || !company || !email) {
+      status.textContent = 'Please fill in all required fields.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    // Build mailto
+    const subject = encodeURIComponent('Demo Request from ' + name + ' — ' + company);
+    const body = encodeURIComponent(
+      'New demo request from dube.eu\n' +
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n' +
+      'Name: ' + name + '\n' +
+      'Company: ' + company + '\n' +
+      'Email: ' + email + '\n' +
+      'Phone: ' + (phone || '—') + '\n\n' +
+      'Message:\n' + (message || '—') + '\n'
+    );
+
+    // Open mail client
+    window.location.href = 'mailto:andreas.dube@dube.eu?subject=' + subject + '&body=' + body;
+
+    // UI feedback
+    btn.disabled = true;
+    btn.textContent = 'Opening mail client…';
+    status.textContent = 'Your mail client should open shortly. Thank you!';
+    status.className = 'form-status success';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = 'Send Request';
+    }, 3000);
   }
 
   // Intersection observer for scroll animations
@@ -1448,4 +1455,11 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.cap-card, .step, .service-card, .trust-item').forEach(el => {
-    el.style.opacity
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
