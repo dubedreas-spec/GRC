@@ -938,15 +938,15 @@
     footer {
       background: #071020;
       border-top: 1px solid var(--line);
-      padding: 4rem;
+      padding: 3rem 4rem;
     }
 
     .footer-layout {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 3rem;
-      padding-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
@@ -957,7 +957,7 @@
       font-weight: 600;
       letter-spacing: 0.15em;
       color: var(--gold);
-      margin-bottom: 1rem;
+      margin-bottom: 0.6rem;
     }
     .footer-logo span { color: var(--paper); font-style: italic; }
     .footer-logo .logo-paren { color: var(--paper); font-style: italic; font-weight: 300; }
@@ -966,26 +966,23 @@
       font-size: 0.65rem;
       line-height: 1.8;
       color: var(--mist);
-      max-width: 280px;
+      max-width: 320px;
     }
 
-    .footer-col-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.4rem;
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
     }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-    .footer-links a {
+    .footer-legal a {
       font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
       color: var(--mist);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--paper); }
+    .footer-legal a:hover { color: var(--paper); }
 
     .footer-bottom {
       display: flex; justify-content: space-between; align-items: center;
@@ -993,7 +990,7 @@
     .footer-copy {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
-      color: rgba(138,154,176,0.5);
+      color: rgba(139,163,190,0.5);
       letter-spacing: 0.05em;
     }
     .footer-domain {
@@ -1020,7 +1017,9 @@
       .trust-layout { grid-template-columns: 1fr; gap: 3rem; }
       .cta-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .form-row { grid-template-columns: 1fr; }
-      .footer-layout { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-layout { flex-direction: column; gap: 1.5rem; }
+      .footer-legal { gap: 1.5rem; }
+      footer { padding: 2rem; }
     }
   </style>
 </head>
@@ -1127,7 +1126,7 @@
   <div class="section-eyebrow">Platform Capabilities</div>
   <h2 class="section-title">Everything your compliance<br>team <em>actually needs</em></h2>
   <p class="section-body">
-    Dub(e)AI is not a generic SaaS tool. It's a purpose-built AI system delivered as a custom solution — designed around your frameworks, your risk appetite, your regulatory context.
+    Dub(e)AI delivers no generic SaaS tool. It's a purpose-built GRC system delivered as a custom solution — designed around your frameworks, your risk appetite, your regulatory context.
   </p>
 
   <div class="cap-grid">
@@ -1356,37 +1355,14 @@
       <div class="footer-logo">Dub<span class="logo-paren">(e)</span>AI</div>
       <div class="footer-tagline">AI-powered GRC intelligence. Custom-built. Expert-delivered. Fully yours.</div>
     </div>
-    <div>
-      <div class="footer-col-title">Platform</div>
-      <ul class="footer-links">
-        <li><a href="#">Risk Management</a></li>
-        <li><a href="#">Internal Controls</a></li>
-        <li><a href="#">Audit Management</a></li>
-        <li><a href="#">Dashboards</a></li>
-        <li><a href="#">Integrations</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links">
-        <li><a href="#">Implementation</a></li>
-        <li><a href="#">Training</a></li>
-        <li><a href="#">GRC Advisory</a></li>
-        <li><a href="#">Ongoing Support</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Company</div>
-      <ul class="footer-links">
-        <li><a href="#">About Dub(e)AI</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 Dub(e)AI. All rights reserved.</div>
+    <div class="footer-copy">© 2025 Dub(e)AI — Andreas Dube, Bad Homburg, Germany</div>
     <div class="footer-domain">www.dube.eu</div>
   </div>
 </footer>
