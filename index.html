@@ -363,7 +363,7 @@
     }
 
     /* ─── SECTION BASE ─── */
-    section { padding: 5rem 4rem; }
+    section { padding: 3.5rem 4rem; }
 
     .section-eyebrow {
       font-family: 'DM Mono', monospace;
@@ -467,10 +467,10 @@
 
     .how-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-columns: 1fr;
+      gap: 3rem;
       margin-top: 3rem;
-      align-items: center;
+      max-width: 680px;
     }
 
     .steps { display: flex; flex-direction: column; gap: 0; }
@@ -715,6 +715,73 @@
       animation: fillBar 1.5s ease-out forwards;
     }
     @keyframes fillBar { from { width: 0; } }
+
+    /* ─── REALITY CHECK ─── */
+    .reality-check {
+      background: linear-gradient(180deg, var(--ink) 0%, #0a1225 50%, var(--ink) 100%);
+    }
+
+    .reality-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem;
+      margin-top: 2.5rem;
+    }
+
+    .reality-card {
+      padding: 2.2rem 2rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+      border-radius: 4px;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .reality-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent-bright), var(--citron));
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .reality-card:hover { border-color: rgba(0,119,168,0.3); background: rgba(0,95,135,0.08); }
+    .reality-card:hover::after { opacity: 1; }
+
+    .reality-icon { font-size: 1.6rem; margin-bottom: 1.2rem; }
+    .reality-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--paper);
+      margin-bottom: 0.7rem;
+      line-height: 1.3;
+    }
+    .reality-desc {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      line-height: 1.85;
+      color: var(--mist);
+    }
+
+    .reality-sources {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .reality-sources a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.04em;
+      color: var(--citron);
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid rgba(200,214,48,0.25);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .reality-sources a:hover {
+      background: rgba(200,214,48,0.1);
+      border-color: var(--citron);
+    }
 
     /* ─── EXPERTISE / SERVICES ─── */
     .expertise {
@@ -1011,6 +1078,7 @@
       section { padding: 3.5rem 2rem; }
       .cap-grid { grid-template-columns: 1fr; }
       .how-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .reality-grid { grid-template-columns: 1fr; }
       .pillar-tabs { grid-template-columns: 1fr; }
       .pillar-content.active { grid-template-columns: 1fr; }
       .expertise-layout { grid-template-columns: 1fr; gap: 3rem; }
@@ -1029,9 +1097,9 @@
 <nav>
   <div class="nav-logo">Dub<span class="logo-paren">(e)</span>AI</div>
   <div class="nav-links">
-    <a href="#capabilities">Platform</a>
+    <a href="#reality">Why Dub(e)AI</a>
     <a href="#expertise">Services</a>
-    <a href="#trust">Why Dub(e)AI</a>
+    <a href="#how">How It Works</a>
     <a href="#contact" class="nav-cta">Request Demo</a>
   </div>
 </nav>
@@ -1109,65 +1177,78 @@
   </div>
 </section>
 
-<!-- ─── STATS ─── -->
-<div class="stats-bar" style="grid-template-columns: repeat(2, 1fr);">
-  <div class="stat-item">
-    <div class="stat-num">100%</div>
-    <div class="stat-label">Custom Built</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">∞</div>
-    <div class="stat-label">Configurable</div>
-  </div>
-</div>
 
-<!-- ─── CAPABILITIES ─── -->
-<section class="capabilities" id="capabilities">
-  <div class="section-eyebrow">Platform Capabilities</div>
-  <h2 class="section-title">Everything your compliance<br>team <em>actually needs</em></h2>
-  <p class="section-body">
-    Dub(e)AI delivers no generic SaaS tool. It's a purpose-built GRC system delivered as a custom solution — designed around your frameworks, your risk appetite, your regulatory context.
-  </p>
 
-  <div class="cap-grid">
-    <div class="cap-card">
-      <div class="cap-icon">🧠</div>
-      <div class="cap-title">AI-Driven Risk Intelligence</div>
-      <div class="cap-desc">Continuously monitor, score, and correlate risks across your enterprise. AI surfaces emerging exposures before they become issues, linking risk events to controls automatically.</div>
-      <span class="cap-tag">Risk Engine</span>
+<!-- ─── REALITY CHECK ─── -->
+<section class="reality-check" id="reality">
+  <div class="section-eyebrow">Reality Check</div>
+  <h2 class="section-title">No consulting bullshit.<br>Just <em>results.</em></h2>
+
+  <div class="reality-grid">
+    <div class="reality-card">
+      <div class="reality-icon">🏗️</div>
+      <div class="reality-title">Your infrastructure. Your rules.</div>
+      <div class="reality-desc">Run Dub(e)AI wherever you want — AWS, Azure, GCP, or your own data centre. No vendor lock-in. No forced cloud migration. You choose your hosting partner, and we deploy there. Period.</div>
     </div>
-    <div class="cap-card">
-      <div class="cap-icon">🛡️</div>
-      <div class="cap-title">Internal Controls Management</div>
-      <div class="cap-desc">Design, document, test, and remediate controls across SOX, ISO, COSO or custom frameworks. Full control lifecycle with automated evidence collection and owner workflows.</div>
-      <span class="cap-tag">Controls</span>
+    <div class="reality-card">
+      <div class="reality-icon">💀</div>
+      <div class="reality-title">AI is already killing SaaS.</div>
+      <div class="reality-desc">The "SaaSpocalypse" wiped $285 billion from software stocks in early 2026. Per-seat pricing is collapsing. Why rent generic software when AI can build what you actually need? We saw this coming — that's why Dub(e)AI was never SaaS to begin with.</div>
+      <div class="reality-sources">
+        <a href="https://www.bain.com/insights/will-agentic-ai-disrupt-saas-technology-report-2025/" target="_blank">Bain & Company →</a>
+        <a href="https://xpert.digital/en/the-big-reckoning/" target="_blank">The Great Reckoning →</a>
+        <a href="https://www.techbrew.com/stories/2026/03/02/is-ai-killing-saas" target="_blank">Tech Brew →</a>
+      </div>
     </div>
-    <div class="cap-card">
-      <div class="cap-icon">🔍</div>
-      <div class="cap-title">Intelligent Audit Management</div>
-      <div class="cap-desc">Plan, execute, and report audits with AI assistance. Smart scoping, automated workpaper generation, finding management, and regulator-ready reporting in one workspace.</div>
-      <span class="cap-tag">Audit</span>
+    <div class="reality-card">
+      <div class="reality-icon">⚡</div>
+      <div class="reality-title">Still outsourcing App Support to "reduce costs"?</div>
+      <div class="reality-desc">Skip that part entirely. Dub(e)AI is built so your team runs it — no offshore support desk, no ticket queues, no dependency on a vendor's roadmap. We train your people, hand over the keys, and you're done.</div>
     </div>
-    <div class="cap-card">
-      <div class="cap-icon">⚙️</div>
-      <div class="cap-title">Fully Custom Architecture</div>
-      <div class="cap-desc">No rigid data models. Dub(e)AI adapts to your taxonomy, your org structure, your nomenclature. Every field, workflow, and report is configurable — by us, then by you.</div>
-      <span class="cap-tag">Customisation</span>
-    </div>
-    <div class="cap-card">
-      <div class="cap-icon">📊</div>
-      <div class="cap-title">Executive Reporting & Dashboards</div>
-      <div class="cap-desc">Real-time dashboards for the board, audit committee, and management. Drillable KRIs, heat maps, trend analysis, and narrative generation powered by AI commentary.</div>
-      <span class="cap-tag">Analytics</span>
-    </div>
-    <div class="cap-card">
-      <div class="cap-icon">🔗</div>
-      <div class="cap-title">Integrations & Data Pipelines</div>
-      <div class="cap-desc">Connect to your ERP, HRMS, ticketing, and cloud infrastructure. Automated data ingestion removes manual effort and ensures your GRC data is always current.</div>
-      <span class="cap-tag">Integrations</span>
+    <div class="reality-card">
+      <div class="reality-icon">🔑</div>
+      <div class="reality-title">Real knowledge transfer. Not a PDF.</div>
+      <div class="reality-desc">Every engagement includes hands-on training, playbooks, and ongoing access to our GRC specialists. You gain the tool and the capability to run it — independently, from day one.</div>
     </div>
   </div>
 </section>
+
+<!-- ─── EXPERTISE ─── -->
+<section class="expertise" id="expertise">
+  <div class="expertise-layout">
+    <div>
+      <div class="section-eyebrow">Hands-On Expertise</div>
+      <h2 class="section-title">Not just software.<br><em>Expertise</em> delivered.</h2>
+      <p class="section-body">
+        Dub(e)AI comes with a proven base set of GRC functions out of the box — risk registers, control libraries, audit workflows, dashboards, and reporting. You don't start from scratch. But if you want to, we can build from zero to fit your exact needs.
+      </p>
+    </div>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <div class="service-title">Custom Implementation</div>
+        <div class="service-desc">Full deployment tailored to your frameworks, org structure, and processes. No compromise on fit.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <div class="service-title">Training & Enablement</div>
+        <div class="service-desc">Intensive hands-on training so your team can operate, configure, and extend the system independently.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <div class="service-title">Ongoing Modification</div>
+        <div class="service-desc">As your needs evolve, we're here to extend modules, add integrations, or adapt to new regulations.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <div class="service-title">GRC Advisory</div>
+        <div class="service-desc">Expert guidance on frameworks, maturity, regulatory compliance, and best-practice programme design.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- ─── HOW IT WORKS ─── -->
 <section class="how-it-works" id="how">
@@ -1209,100 +1290,12 @@
         </div>
       </div>
     </div>
-
-    <div class="process-visual">
-      <div class="process-header">⬡ Dub(e)AI — Live Analysis</div>
-      <div class="ai-thinking">
-        <div class="ai-line done">Ingesting ERP transaction data — 48,291 records</div>
-        <div class="ai-line done">Mapping to control framework — COSO 2013</div>
-        <div class="ai-line done">Identifying anomalies in AP cycle — 3 found</div>
-        <div class="ai-line active"><span class="pulse-dot"></span> Correlating to existing risk register…</div>
-        <div class="ai-line">Generating audit trail documentation</div>
-        <div class="ai-line">Drafting management action plan</div>
-        <div class="ai-line">Notifying control owners via workflow</div>
-      </div>
-      <div class="ai-output">
-        ⚠ FINDING IDENTIFIED<br>
-        Control: AP.03 — Segregation of Duties<br>
-        Severity: High | Risk: Financial Misstatement<br>
-        Anomaly: Single user approval + payment in 14 transactions<br>
-        Recommended action: Immediate access review + retrospective audit
-      </div>
-    </div>
   </div>
 </section>
 
 
-<!-- ─── EXPERTISE ─── -->
-<section class="expertise" id="expertise">
-  <div class="expertise-layout">
-    <div>
-      <div class="section-eyebrow">Hands-On Expertise</div>
-      <h2 class="section-title">Not just software.<br><em>Expertise</em> delivered.</h2>
-      <p class="section-body">
-        Dub(e)AI combines a powerful AI platform with the deep GRC expertise of our practitioners. We don't just hand you software — we work alongside you until your team owns it completely.
-      </p>
-      <br>
-      <p class="section-body">
-        Every engagement includes knowledge transfer, playbooks, and ongoing access to our GRC specialists. You gain the tool <em>and</em> the capability to run it.
-      </p>
-    </div>
-    <div class="service-cards">
-      <div class="service-card">
-        <div class="service-icon">🏗️</div>
-        <div class="service-title">Custom Implementation</div>
-        <div class="service-desc">Full deployment tailored to your frameworks, org structure, and processes. No compromise on fit.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎓</div>
-        <div class="service-title">Training & Enablement</div>
-        <div class="service-desc">Intensive hands-on training so your team can operate, configure, and extend the system independently.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <div class="service-title">Ongoing Modification</div>
-        <div class="service-desc">As your needs evolve, we're here to extend modules, add integrations, or adapt to new regulations.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🧭</div>
-        <div class="service-title">GRC Advisory</div>
-        <div class="service-desc">Expert guidance on frameworks, maturity, regulatory compliance, and best-practice programme design.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ─── TRUST ─── -->
-<section class="trust" id="trust">
-  <div class="trust-layout">
-    <div class="trust-quote">
-      "GRC should be a<br>strategic asset —<br><em>not a burden.</em>"
-    </div>
-    <div class="trust-items">
-      <div class="trust-item">
-        <div class="trust-icon">⚡</div>
-        <div>
-          <div class="trust-item-title">Built for Speed & Ownership</div>
-          <div class="trust-item-desc">Most GRC tools take months to configure and years to master. Dub(e)AI is live in weeks, and your team is self-sufficient from day one — because we train them to be.</div>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">🔒</div>
-        <div>
-          <div class="trust-item-title">Deployed in Your Environment</div>
-          <div class="trust-item-desc">Dub(e)AI runs where you need it — your cloud, on-premise, or hybrid. Your data never leaves your control. Full audit logs, RBAC, and encryption by default.</div>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">🎯</div>
-        <div>
-          <div class="trust-item-title">No Vendor Lock-In</div>
-          <div class="trust-item-desc">We build with open, maintainable architectures. Once deployed, your team can modify, extend, and manage Dub(e)AI without dependency on our roadmap.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ─── CTA ─── -->
 <section class="cta-section" id="contact">
