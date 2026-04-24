@@ -187,9 +187,11 @@
     .ftr a:hover{color:var(--tx)}
 
     @media(max-width:480px){
-      nav{padding:.5rem 1rem}
-      .nav-icon img{height:26px;width:26px}
-      .nav-pill{display:none}
+      nav{padding:.5rem .6rem}
+      .nav-icon img{height:24px;width:24px}
+      .nav-pill{padding:2px;gap:0}
+      .nav-pill a:not(.nav-cta){font-size:.58rem;padding:.35rem .5rem}
+      .nav-pill .nav-cta{font-size:.58rem;padding:.35rem .6rem;margin-left:1px}
       .hero{min-height:auto;padding:5rem 0 3rem}
       .hero-inner{max-width:100%}
       .glow-container{--card-width:95vw;--card-radius:.8rem;aspect-ratio:2.4/1}
