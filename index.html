@@ -62,7 +62,7 @@ section{position:relative}
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 auto;max-width:1320px}
 
 /* ───────── Hero ───────── */
-.hero{min-height:100vh;padding:160px 0 120px;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero{min-height:100vh;padding:120px 0 0;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
 .hero-bg{position:absolute;inset:0;pointer-events:none;
   background:
     radial-gradient(1100px 600px at 80% -10%, rgba(43,197,201,.10), transparent 60%),
@@ -74,8 +74,11 @@ section{position:relative}
   background-size:64px 64px;
   mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 40%,transparent 100%);
   -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 40%,transparent 100%);}
-.hero-inner{position:relative;z-index:10;width:100%;min-width:0}
-.hero-cols{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;width:100%;position:relative;z-index:10}
+.hero-inner{position:relative;z-index:10;width:100%;min-width:0;max-width:600px}
+.hero-cols{display:grid;grid-template-columns:1fr 1fr;align-items:center;width:100%;position:relative;z-index:10;min-height:calc(100vh - 240px)}
+.hero-text-side{padding:0 clamp(20px,4.5vw,80px) 0 clamp(20px,4.5vw,56px);display:flex;justify-content:flex-end}
+.hero-video-side{padding:0 clamp(20px,4.5vw,56px) 0 clamp(16px,2vw,32px);display:flex;justify-content:flex-start;align-items:stretch}
+.hero-video-side .hero-video{width:100%;max-width:none}
 .hero-video{position:relative;aspect-ratio:16/10;border-radius:18px;border:1px solid var(--border-h);background:linear-gradient(180deg,rgba(15,24,48,.7),rgba(12,19,34,.4));overflow:hidden;box-shadow:0 30px 60px -28px rgba(30,79,217,.45),0 16px 32px -10px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.06) inset;display:grid;place-items:center;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
 .hero-video:hover{transform:translateY(-2px);box-shadow:0 40px 80px -28px rgba(30,79,217,.55),0 20px 40px -10px rgba(0,0,0,.55),0 1px 0 rgba(255,255,255,.08) inset}
 .video-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:42px 42px;-webkit-mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 30%,transparent 100%);mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 30%,transparent 100%);pointer-events:none}
@@ -98,12 +101,9 @@ h1.hero-h em{font-style:italic}
 .btn-s{font-size:15px;font-weight:500;padding:15px 24px;border-radius:10px;background:transparent;color:var(--text);border:1px solid var(--border-h);cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:10px}
 .btn-s:hover{background:var(--surface);border-color:rgba(255,255,255,.28)}
 
-.hero-meta{position:relative;z-index:10;max-width:1320px;margin:120px auto 0;padding:0 56px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
-.hero-meta .l{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
-.hero-meta .tags{display:flex;gap:10px;flex-wrap:wrap}
-.tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);padding:6px 12px;border:1px solid var(--border);border-radius:6px;background:var(--surface);letter-spacing:.04em}
-.hero-meta .r{text-align:right;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);letter-spacing:.05em;line-height:1.8}
-.hero-meta .r b{color:var(--text);font-weight:500}
+.hero-foot{position:relative;z-index:10;margin-top:auto;padding:18px clamp(20px,4.5vw,56px);border-top:1px solid var(--border);background:rgba(12,19,34,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);flex-wrap:wrap}
+.hero-foot-l{color:var(--muted)}
+.hero-foot-r{color:var(--text);font-weight:500;letter-spacing:.06em}
 
 /* ───────── Section heads ───────── */
 .sec{padding:140px 0;position:relative}
@@ -255,7 +255,8 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
 /* ───────── Responsive ───────── */
 @media(max-width:1100px){
   .modules-grid,.founder,.contact,.prob-grid{grid-template-columns:1fr;gap:48px}
-  .hero-cols{gap:32px}
+  .hero-text-side{padding-right:24px}
+  .hero-video-side{padding-left:24px}
   .founder{padding:40px}
   .vs-grid{grid-template-columns:1fr}
   .usps{grid-template-columns:repeat(2,1fr)}
@@ -263,15 +264,19 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
   .flow .conn{display:none}
 }
 @media(max-width:720px){
-  .nv-inner,.wrap,.hero-meta,.ft{padding:0 16px}
+  .nv-inner,.wrap,.ft{padding:0 16px}
   .nv-links{gap:14px;font-size:11.5px}
   .nv-links a:nth-child(n+4){display:none}
   .nv-cta{font-size:11.5px;padding:7px 12px;gap:4px}
   .nv-cta svg{width:11px;height:11px}
   .nv-brand img{height:22px}
   nav{padding:10px 0}
-  .hero{padding:110px 0 50px}
-  .hero-cols{grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+  .hero{padding:90px 0 0}
+  .hero-cols{min-height:calc(100vh - 180px);align-items:center}
+  .hero-text-side{padding:0 12px 0 16px}
+  .hero-video-side{padding:0 16px 0 8px}
+  .hero-foot{font-size:8px;letter-spacing:.12em;padding:12px 16px;gap:10px}
+  .hero-foot-r{letter-spacing:.04em}
   h1.hero-h{font-size:clamp(28px,8vw,40px);margin-bottom:16px;max-width:none}
   .hero-tag{font-size:8px;padding:4px 8px;gap:6px;margin-bottom:14px}
   .hero-sub{font-size:12.5px;margin-bottom:18px;max-width:none}
@@ -336,8 +341,8 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="wrap">
-    <div class="hero-cols">
+  <div class="hero-cols">
+    <div class="hero-text-side">
       <div class="hero-inner">
         <div class="hero-tag"><span class="pulse"></span>A custom-built GRC platform</div>
         <h1 class="hero-h">
@@ -353,6 +358,8 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
           <a href="#advantage" class="btn-s">See the advantage</a>
         </div>
       </div>
+    </div>
+    <div class="hero-video-side">
       <div class="hero-video" aria-label="Synthesia video placeholder">
         <!-- Synthesia embed goes here. Replace this placeholder with your iframe/video tag. -->
         <div class="video-grid"></div>
@@ -367,21 +374,9 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
       </div>
     </div>
   </div>
-  <div class="hero-meta">
-    <div>
-      <div class="l">Built for</div>
-      <div class="tags">
-        <span class="tag">SOX-404</span>
-        <span class="tag">DORA</span>
-        <span class="tag">ISO 27001</span>
-        <span class="tag">NIS2</span>
-        <span class="tag">MaRisk</span>
-      </div>
-    </div>
-    <div class="r">
-      Deployed in your environment<br/>
-      <b>AWS · Azure · GCP · On-prem</b>
-    </div>
+  <div class="hero-foot">
+    <span class="hero-foot-l">Deployed in your environment</span>
+    <span class="hero-foot-r">AWS · Azure · GCP · On-prem</span>
   </div>
 </section>
 
