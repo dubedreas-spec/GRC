@@ -36,7 +36,9 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter Tight',Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter Tight',Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.5;-webkit-font-smoothing:antialiased;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}
+input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;pointer-events:auto}
 .serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-style:italic}
 .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
 .gradient-text{background:var(--ink-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
@@ -73,6 +75,16 @@ section{position:relative}
   mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 40%,transparent 100%);
   -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 40%,transparent 100%);}
 .hero-inner{position:relative;z-index:10;width:100%}
+.hero-cols{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;width:100%;position:relative;z-index:10}
+.hero-video{position:relative;aspect-ratio:16/10;border-radius:18px;border:1px solid var(--border-h);background:linear-gradient(180deg,rgba(15,24,48,.7),rgba(12,19,34,.4));overflow:hidden;box-shadow:0 30px 60px -28px rgba(30,79,217,.45),0 16px 32px -10px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.06) inset;display:grid;place-items:center;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.hero-video:hover{transform:translateY(-2px);box-shadow:0 40px 80px -28px rgba(30,79,217,.55),0 20px 40px -10px rgba(0,0,0,.55),0 1px 0 rgba(255,255,255,.08) inset}
+.video-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:42px 42px;-webkit-mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 30%,transparent 100%);mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 30%,transparent 100%);pointer-events:none}
+.video-glow{position:absolute;inset:-2px;border-radius:18px;background:radial-gradient(600px 300px at 50% 50%,rgba(43,197,201,.18),transparent 60%),radial-gradient(500px 250px at 50% 100%,rgba(155,216,51,.12),transparent 60%);pointer-events:none}
+.video-play{position:relative;z-index:2;width:84px;height:84px;border-radius:999px;background:rgba(255,255,255,.96);border:none;display:grid;place-items:center;color:var(--bg);cursor:pointer;box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 0 12px rgba(255,255,255,.06),0 0 0 24px rgba(255,255,255,.03);transition:transform .2s ease,box-shadow .2s ease}
+.video-play:hover{transform:scale(1.06);box-shadow:0 20px 50px rgba(0,0,0,.55),0 0 0 14px rgba(255,255,255,.08),0 0 0 28px rgba(255,255,255,.04)}
+.video-play svg{margin-left:4px}
+.video-meta{position:absolute;left:18px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);background:rgba(12,19,34,.7);border:1px solid var(--border);border-radius:999px;padding:6px 12px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.video-dot{width:6px;height:6px;border-radius:999px;background:var(--lime);box-shadow:0 0 0 3px rgba(155,216,51,.2)}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);padding:7px 14px;border:1px solid rgba(155,216,51,.25);border-radius:100px;background:rgba(155,216,51,.05);margin-bottom:36px}
 .hero-tag .pulse{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(155,216,51,.15);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(155,216,51,.05)}}
@@ -243,6 +255,8 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
 /* ───────── Responsive ───────── */
 @media(max-width:1100px){
   .modules-grid,.founder,.contact,.prob-grid{grid-template-columns:1fr;gap:48px}
+  .hero-cols{grid-template-columns:1fr;gap:40px}
+  .hero-video{max-width:600px;justify-self:center;width:100%}
   .founder{padding:40px}
   .vs-grid{grid-template-columns:1fr}
   .usps{grid-template-columns:repeat(2,1fr)}
@@ -257,6 +271,9 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
   .nv-cta svg{width:11px;height:11px}
   .nv-brand img{height:22px}
   nav{padding:10px 0}
+  .video-play{width:64px;height:64px}
+  .video-play svg{width:22px;height:22px}
+  .video-meta{font-size:9px;padding:5px 10px;left:12px;bottom:12px}
   .hero{padding:120px 0 60px}
   .hero-meta{flex-direction:column;align-items:flex-start;gap:32px;margin-top:80px}
   .hero-meta .r{text-align:left}
@@ -311,19 +328,33 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="wrap">
-    <div class="hero-inner">
-      <div class="hero-tag"><span class="pulse"></span>A custom-built GRC platform</div>
-      <h1 class="hero-h">
-        Own it.<br/>
-        <span class="gradient-text">Shape it.</span><br/>
-        <em>Deploy it.</em>
-      </h1>
-      <p class="hero-sub">A GRC platform you <b>own</b>, you <b>change</b>, and you <b>deploy anywhere</b>. Internal Controls, Risk Management and Audit — built for your organisation, operated by your team.</p>
-      <div class="ctas">
-        <a href="#contact" class="btn-p">Request a demo
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="#advantage" class="btn-s">See the advantage</a>
+    <div class="hero-cols">
+      <div class="hero-inner">
+        <div class="hero-tag"><span class="pulse"></span>A custom-built GRC platform</div>
+        <h1 class="hero-h">
+          Own it.<br/>
+          <span class="gradient-text">Shape it.</span><br/>
+          <em>Deploy it.</em>
+        </h1>
+        <p class="hero-sub">A GRC platform you <b>own</b>, you <b>change</b>, and you <b>deploy anywhere</b>. Internal Controls, Risk Management and Audit — built for your organisation, operated by your team.</p>
+        <div class="ctas">
+          <a href="#contact" class="btn-p">Request a demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#advantage" class="btn-s">See the advantage</a>
+        </div>
+      </div>
+      <div class="hero-video" aria-label="Synthesia video placeholder">
+        <!-- Synthesia embed goes here. Replace this placeholder with your iframe/video tag. -->
+        <div class="video-grid"></div>
+        <div class="video-glow"></div>
+        <button class="video-play" type="button" aria-label="Play intro video">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="video-meta">
+          <span class="video-dot"></span>
+          <span>Intro · 90 sec</span>
+        </div>
       </div>
     </div>
   </div>
@@ -570,6 +601,28 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);margin-top:40px}
 </footer>
 
 <script>
+// Basic content protection. Note: NOT a real security measure — anyone can
+// open DevTools (F12) or view source. This just deters casual copy-paste
+// and right-click "Save image" / "Copy text" by non-technical users.
+(function(){
+  function isFormField(t){return t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)}
+  document.addEventListener('contextmenu', function(e){
+    if (!isFormField(e.target)) e.preventDefault();
+  });
+  ['copy','cut','dragstart'].forEach(function(ev){
+    document.addEventListener(ev, function(e){
+      if (!isFormField(e.target)) e.preventDefault();
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (isFormField(e.target)) return;
+    var k = e.key.toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && (k === 'c' || k === 'x' || k === 's' || k === 'a' || k === 'p')) {
+      e.preventDefault();
+    }
+  });
+})();
+
 // Build module orbit cards
 (function(){
   const mods = [
