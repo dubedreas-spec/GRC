@@ -550,6 +550,23 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   .integ{border-right:none!important;border-bottom:1px solid var(--border)!important}
   .integ:last-child{border-bottom:none!important}
   .ft{flex-direction:column;align-items:flex-start}
+  /* Top bar fits in portrait: shrink lockup + CTA */
+  .lockup img{height:28px}
+  .lockup.sm img{height:24px}
+  .nv-cta{font-size:12px;padding:8px 12px;gap:5px}
+  .nv-cta svg{width:11px;height:11px}
+  /* Magic Quadrant: <picture> swaps lockup → shield-only on mobile (see HTML), shrink and re-centre marker */
+  .q-dot.us{width:24px;height:24px;background:transparent;box-shadow:0 0 0 6px rgba(139,197,64,.18),0 4px 12px rgba(139,197,64,.36);border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center}
+  .q-dot.us picture,.q-dot.us img{height:24px;width:24px;display:block;filter:none;border-radius:50%}
+  /* Other vendor labels overlap each other on narrow charts — hide them, keep the dots */
+  .q-lab:not(.us){display:none}
+  .quadrant-sec{padding:80px 0}
+  .q-chart-wrap{padding:14px}
+}
+@media(max-width:380px){
+  .nv-cta span,.nv-cta{font-size:11px;padding:7px 10px}
+  .nv-cta svg{display:none}
+  .lockup img{height:24px}
 }
 </style>
 </head>
@@ -1004,7 +1021,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
           <div class="q-dot" style="left:68%;top:60%"><span class="q-lab">ComplianceX</span></div>
           <div class="q-dot" style="left:55%;top:72%"><span class="q-lab">AuditFlow</span></div>
           <div class="q-dot" style="left:38%;top:78%"><span class="q-lab">SmallVendor</span></div>
-          <div class="q-dot us" style="left:80%;top:18%"><img src="assets/lockup-horizontal.png" alt="DubeAI" width="2000" height="500"/></div>
+          <div class="q-dot us" style="left:80%;top:18%"><picture><source media="(max-width:720px)" srcset="assets/shield-64.png"/><img src="assets/lockup-horizontal.png" alt="DubeAI" width="2000" height="500"/></picture></div>
         </div>
       </div>
     </div>
