@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" href="assets/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/shield-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png"/>
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+<link rel="manifest" href="assets/site.webmanifest"/>
+<title>Imprint — Dub(e)AI</title>
+<meta name="description" content="Imprint (Impressum) for Dub(e)AI per §5 TMG."/>
+<meta name="application-name" content="Dub(e)AI"/>
+<link rel="canonical" href="https://www.dube.eu/imprint.html"/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#0F1724"/>
+
+<!-- FONTS — see index.html for setup notes. Self-hosted woff2 in assets/fonts/. -->
+<link rel="preload" as="font" href="assets/fonts/InterTight-800.woff2" type="font/woff2" crossorigin/>
+<style>
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/InterTight-500.woff2') format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/InterTight-700.woff2') format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/InterTight-800.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/JetBrainsMono-500.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/JetBrainsMono-700.woff2') format('woff2')}
+</style>
+<style>
+:root{
+  --cyan:#3BB7BF;--cyan-dim:#2a8a90;--green:#8BC540;--green-dim:#6FA01F;
+  --navy:#0F1724;--navy-deep:#070b14;
+  --bg:#f5f7fa;--bg-2:#ffffff;--bg-3:#eceff4;
+  --surface:rgba(15,23,36,.04);--surface-h:rgba(15,23,36,.07);
+  --border:rgba(15,23,36,.10);--border-h:rgba(15,23,36,.22);
+  --text:#0F1724;--muted:rgba(15,23,36,.62);--dim:rgba(15,23,36,.42);--faint:rgba(15,23,36,.22);
+  --red:#e03131;--orange:#e8590c;--violet:#7048e8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:'Inter Tight',Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+/* ── Brand lockup (official horizontal) ── */
+.lockup{display:inline-flex;align-items:center}
+.lockup img{height:38px;width:auto;display:block}
+.lockup.sm img{height:30px}
+
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rgba(245,247,250,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nv-inner{max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nv-links{display:flex;gap:36px;font-size:13.5px;color:var(--muted);font-weight:500}
+.nv-links a{transition:color .2s}
+.nv-links a:hover{color:var(--navy)}
+.nv-cta{font-size:13px;font-weight:600;padding:10px 18px;background:var(--navy);color:#fff;transition:all .2s;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--navy)}
+.nv-cta:hover{background:var(--cyan);border-color:var(--cyan);color:var(--navy);transform:translateY(-1px)}
+.nv-actions{display:flex;align-items:center;gap:10px}
+.nv-login{font-size:13px;font-weight:600;padding:10px 14px;color:var(--navy);border:1px solid var(--border-h);transition:all .2s;display:inline-flex;align-items:center;gap:7px;background:transparent}
+.nv-login:hover{border-color:var(--navy);background:var(--surface)}
+@media(max-width:980px){.nv-login{display:none}}
+
+/* ── Legal layout ── */
+.legal-wrap{max-width:1100px;margin:0 auto;padding:140px 40px 80px}
+.legal-head{margin-bottom:48px}
+.label{display:inline-flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.label::before{content:"[ ";color:var(--faint);font-weight:400}
+.label::after{content:" ]";color:var(--faint);font-weight:400}
+.label .num{color:var(--faint);font-weight:500}
+h1.legal-h{font-family:'Inter Tight',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);line-height:1.02;letter-spacing:-.035em;color:var(--navy);margin-bottom:16px}
+.legal-meta{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+
+.legal-body{max-width:760px}
+.prose{font-family:'Inter Tight',sans-serif;color:var(--text)}
+.prose>*+*{margin-top:1.1em}
+.prose h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-top:2.6em;padding-top:1.3em;border-top:1px solid var(--border);scroll-margin-top:96px}
+.prose h2:first-child{border-top:none;padding-top:0;margin-top:0}
+.prose h3{font-size:17px;font-weight:700;color:var(--navy);margin-top:1.6em;scroll-margin-top:96px}
+.prose p,.prose li{font-size:16.5px;line-height:1.7;color:var(--text)}
+.prose a{color:var(--cyan-dim);border-bottom:1px solid currentColor;transition:color .15s}
+.prose a:hover{color:var(--navy)}
+.prose ul,.prose ol{padding-left:1.4em;margin-top:.6em}
+.prose ul>li+li,.prose ol>li+li{margin-top:.4em}
+.prose strong{font-weight:700;color:var(--navy)}
+.prose .field-list{list-style:none;padding:0;margin-top:.4em}
+.prose .field-list li{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:8px 0;border-bottom:1px solid var(--border);font-size:15.5px}
+.prose .field-list li:last-child{border-bottom:none}
+.prose .field-list .k{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);align-self:center}
+.prose .field-list .v{color:var(--text)}
+.prose .field-list .v code{font-family:'JetBrains Mono',monospace;font-size:14px;background:var(--surface);padding:1px 6px}
+
+.callout{margin:1.4em 0;padding:14px 16px;border-left:3px solid var(--cyan);background:var(--surface);font-size:14.5px;line-height:1.55;color:var(--muted)}
+.callout strong{color:var(--navy)}
+
+/* ── Footer ── */
+footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--bg)}
+.ft{max-width:1320px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.ftl{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--dim)}
+.ftl .lockup{opacity:.85}
+.ftr{display:flex;gap:28px}
+.ftr a{font-size:13px;color:var(--muted);transition:color .2s}
+.ftr a:hover{color:var(--text)}
+.ftr a[aria-current=page]{color:var(--text);cursor:default;pointer-events:none}
+
+@media(max-width:720px){
+  .nv-inner,.ft{padding-left:20px;padding-right:20px}
+  .nv-links{display:none}
+  nav{padding:12px 0}
+  .legal-wrap{padding:110px 20px 60px}
+  .prose .field-list li{grid-template-columns:1fr;gap:4px;padding:10px 0}
+  .ft{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nv-inner">
+    <a href="index.html#top" class="lockup" aria-label="Dub(e)AI home">
+      <img src="assets/lockup-horizontal.png" alt="Dub(e)AI" width="2000" height="500"/>
+    </a>
+    <div class="nv-links">
+      <a href="index.html#problem">The trap</a>
+      <a href="index.html#pillars">Approach</a>
+      <a href="index.html#quadrant">Mystical Quadrant™</a>
+      <a href="index.html#contact">Request demo</a>
+    </div>
+    <div class="nv-actions">
+      <a href="https://ai4grc.dube.eu" class="nv-login" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+        Log on to GRC Platform
+      </a>
+      <a href="index.html#contact" class="nv-cta">Request a demo
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+  <header class="legal-head">
+    <div class="label"><span class="num">§</span> Legal · Imprint</div>
+    <h1 class="legal-h">Imprint.</h1>
+    <div class="legal-meta">Last updated: 2026-05-17 · v1.0</div>
+  </header>
+
+  <div class="legal-body">
+    <article class="prose">
+
+      <h2 id="provider">1. Provider information</h2>
+      <p>This Imprint is provided pursuant to §5 of the German Telemediengesetz (TMG).</p>
+      <ul class="field-list">
+        <li><span class="k">Name</span><span class="v">Andreas Dube</span></li>
+        <li><span class="k">Location</span><span class="v">Bad Homburg vor der Höhe, Germany</span></li>
+        <li><span class="k">Email</span><span class="v"><code>ai4grc@dube.eu</code> <em style="color:var(--dim);font-style:normal">(plain text — to send a message, use the <a href="index.html#contact">contact form</a>)</em></span></li>
+      </ul>
+
+      <h2 id="responsible">2. Responsible for content</h2>
+      <p>Responsible for the content of this website pursuant to §18 (2) of the Medienstaatsvertrag (MStV):</p>
+      <p>Andreas Dube, Bad Homburg vor der Höhe, Germany.</p>
+
+      <h2 id="eu-dispute">3. EU online dispute resolution</h2>
+      <p>The European Commission provides a platform for online dispute resolution (ODR), available at <a href="https://ec.europa.eu/consumers/odr/" rel="noopener" target="_blank">ec.europa.eu/consumers/odr/</a>.</p>
+      <p>We are neither obligated nor willing to participate in dispute resolution proceedings before a consumer arbitration board (Verbraucherschlichtungsstelle).</p>
+
+      <h2 id="liability-content">4. Liability for content</h2>
+      <p>As a service provider, we are responsible for our own content on these pages pursuant to §7 (1) TMG and general law. According to §§ 8 to 10 TMG, however, we are not obliged to monitor transmitted or stored third-party information, or to investigate circumstances that indicate illegal activity.</p>
+      <p>Obligations to remove or block the use of information under general law remain unaffected. Liability in this respect, however, is only possible from the point in time at which a concrete infringement of the law becomes known. Upon notification of corresponding violations, we will remove this content immediately.</p>
+
+      <h2 id="liability-links">5. Liability for links</h2>
+      <p>Our offer contains links to external third-party websites over whose content we have no influence. We can therefore assume no liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. Linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognisable at the time of linking.</p>
+      <p>Permanent monitoring of the content of linked pages is, however, not reasonable without concrete evidence of a legal violation. Upon notification of legal violations, we will remove such links immediately.</p>
+
+      <h2 id="copyright">6. Copyright</h2>
+      <p>The content and works on these pages created by the site operator are subject to German copyright law. Duplication, processing, distribution, or any form of commercialisation of such material beyond the scope of copyright law requires the prior written consent of its respective author or creator.</p>
+      <p>Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us via the <a href="index.html#contact">contact form</a>. Upon notification of violations, we will remove such content immediately.</p>
+
+      <h2 id="trademarks">7. Trademark notice</h2>
+      <p>"Magic Quadrant" is a registered trademark of Gartner, Inc. Dub(e)AI is not affiliated with, endorsed by, or sponsored by Gartner. The "Mystical Quadrant™" mark used on this website is a parody for illustrative purposes only.</p>
+      <p>All other trademarks, logos, and brand names referenced on this website are the property of their respective owners and are used solely for identification purposes.</p>
+
+      <div class="callout">
+        <strong>Privacy.</strong> For information on how personal data is processed on this website, please see our <a href="privacy.html">Privacy Policy</a>. Website usage is governed by our <a href="terms.html">Terms of Use</a>.
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="ft">
+    <div class="ftl">
+      <span class="lockup sm">
+        <img src="assets/lockup-horizontal.png" alt="Dub(e)AI" width="2000" height="500"/>
+      </span>
+      <span>© 2026 · Andreas Dube · Bad Homburg, Germany</span>
+    </div>
+    <div class="ftr">
+      <a href="imprint.html" aria-current="page">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "Dub(e)AI",
+  "short_name": "Dub(e)AI",
+  "description": "GRC software you own — custom-built platform for Internal Controls, Risk, Audit and Compliance.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0F1724",
+  "background_color": "#f5f7fa",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
