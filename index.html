@@ -562,6 +562,17 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   .q-lab:not(.us){display:none}
   .quadrant-sec{padding:80px 0}
   .q-chart-wrap{padding:14px}
+  /* Tighter axis + quadrant labels so the rotated Y-axis doesn't collide with VISIONARIES */
+  .q-axis{font-size:8px;letter-spacing:.1em}
+  .q-axis.q-y{left:4px}
+  .q-axis.q-x{bottom:6px}
+  .q-quad{font-size:8px;letter-spacing:.12em}
+  .q-quad.q-tl{top:12px;left:22px}
+  .q-quad.q-tr{top:12px;right:10px}
+  .q-quad.q-bl{bottom:24px;left:22px}
+  .q-quad.q-br{bottom:24px;right:10px}
+  .q-chart::before{top:10%;bottom:10%}
+  .q-chart::after{left:10%;right:10%}
 }
 @media(max-width:380px){
   .nv-cta span,.nv-cta{font-size:11px;padding:7px 10px}
@@ -1042,20 +1053,20 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
         <div class="row">
           <div class="fld">
             <label for="rf-name">Name</label>
-            <input id="rf-name" type="text" name="name" required autocomplete="name" placeholder="Jane Doe"/>
+            <input id="rf-name" type="text" name="name" required autocomplete="name"/>
           </div>
           <div class="fld">
             <label for="rf-email">Work email</label>
-            <input id="rf-email" type="email" name="email" required autocomplete="email" placeholder="jane@company.com"/>
+            <input id="rf-email" type="email" name="email" required autocomplete="email"/>
           </div>
         </div>
         <div class="fld">
           <label for="rf-company">Company</label>
-          <input id="rf-company" type="text" name="company" required autocomplete="organization" placeholder="Company AG"/>
+          <input id="rf-company" type="text" name="company" required autocomplete="organization"/>
         </div>
         <div class="fld">
           <label for="rf-msg">What would you like to see?</label>
-          <textarea id="rf-msg" name="message" maxlength="1000" placeholder="Optional — e.g. SOX scoping, risk register, AI change engine."></textarea>
+          <textarea id="rf-msg" name="message" required minlength="10" maxlength="1000" rows="4"></textarea>
         </div>
         <div class="fld fld-consent">
           <label class="consent" for="rf-consent">
