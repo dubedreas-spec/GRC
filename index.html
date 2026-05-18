@@ -149,34 +149,65 @@ h1.hero-h .b{color:var(--green)}
 /* ── MacBook-style laptop ── */
 /* NOTE: filter:drop-shadow was removed (breaks transform-style:preserve-3d).
    Depth is now carried by .laptop-lid's box-shadow + .laptop-base's box-shadow. */
-.laptop-frame{position:relative;width:100%;max-width:820px;justify-self:end;perspective:2400px;perspective-origin:50% 60%}
+.laptop-frame{position:relative;width:100%;max-width:820px;justify-self:end;perspective:2400px;perspective-origin:50% 35%}
 .laptop-3d{position:relative;transform-style:preserve-3d;transform-origin:50% 100%;will-change:transform,opacity}
 .laptop-lid{position:relative;padding:8px;background:linear-gradient(180deg,#d3d6dc 0%,#b8bdc6 50%,#a8aeb9 100%);border-radius:14px 14px 5px 5px;border:1px solid rgba(15,23,36,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(15,23,36,.10);transform-origin:50% 100%;transform-style:preserve-3d;backface-visibility:hidden;will-change:transform}
-.laptop-bezel{position:relative;background:#0a0a0a;border-radius:5px 5px 2px 2px;padding:14px 8px 18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+/* Lid back-face cover: brushed-aluminium with embossed DubeAI shield.
+   Visible only while the lid is closed (back face toward camera). */
+.laptop-lid::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:14px 14px 5px 5px;
+  border:1px solid rgba(15,23,36,.22);
+  /* Multi-stop brushed-aluminium with a soft radial highlight + embossed shield
+     centred via background-image. Order matters: shield is on top of metal. */
+  background:
+    url('assets/shield-128.png') center / clamp(56px,9%,96px) auto no-repeat,
+    radial-gradient(ellipse 70% 55% at 50% 35%,rgba(255,255,255,.30),rgba(255,255,255,0) 70%),
+    linear-gradient(180deg,#d3d6dc 0%,#b8bdc6 50%,#9aa0ab 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.65),
+    inset 0 -1px 0 rgba(15,23,36,.16),
+    inset 0 0 80px rgba(15,23,36,.10);
+  /* Place on the back face of the lid (X-axis flip, tiny Z offset for no z-fighting) */
+  transform:rotateX(180deg) translateZ(1px);
+  backface-visibility:hidden;
+  /* Embossed shield: subtle drop on the image side; cyan-tinted glow hint */
+  filter:drop-shadow(0 1px 1px rgba(15,23,36,.22));
+}
+/* Make sure the bezel (screen side) is hidden when the lid's back face is camera-side,
+   so we never see the screen "bleed through" the closed cover. */
+.laptop-bezel{position:relative;background:#0a0a0a;border-radius:5px 5px 2px 2px;padding:14px 8px 18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);backface-visibility:hidden}
 .laptop-bezel::before{content:"";position:absolute;top:5px;left:50%;width:4px;height:4px;border-radius:50%;background:#1a1a1a;transform:translateX(-50%);box-shadow:inset 0 0 0 1px rgba(140,140,160,.45)}
 .laptop-base{position:relative;height:11px;width:118%;left:-9%;background:linear-gradient(180deg,#cdd1d8 0%,#a8aeb9 30%,#7d8390 100%);border-radius:0 0 14px 14px;border:1px solid rgba(15,23,36,.22);border-top:none;box-shadow:0 10px 18px rgba(15,23,36,.20)}
 .laptop-base::before{content:"";position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:34%;height:5px;background:linear-gradient(180deg,#1a1a1a 0%,#2c2c2c 100%);border-radius:0 0 10px 10px;box-shadow:inset 0 1px 1px rgba(0,0,0,.6)}
 .laptop-base::after{content:"";position:absolute;bottom:-3px;left:8%;right:8%;height:3px;background:linear-gradient(180deg,#5a606b,#2e3239);border-radius:0 0 6px 6px}
 
-/* ── Hero laptop intro animation ──
-   Stage 1 (laptopTurn, 1.5s @ 0.15s): whole laptop pivots from a 3D angle to flat.
-   Stage 2 (lidOpen,    1.6s @ 0.9s):  lid rotates up from -105° with a 3° overshoot.
-   Stage 3 (slideshow):                JS-side BOOT_DELAY = 2700ms before .show starts.
-   Wrapped in prefers-reduced-motion:no-preference so reduced-motion users see a
-   static, already-open laptop. */
+/* ── Hero laptop intro animation (cinematic / slow-motion) ──
+   Stage 1 (laptopTurn, 3.6s @ 0.3s):
+     Closed laptop pivots in from a 3D angle. The shield-cover on the
+     lid's back face is what's visible during this rotation.
+   Stage 2 (lidOpen,    3.4s @ 4.0s):
+     Lid lifts slowly from -100° with a small 2° overshoot.
+     Starts after rotation has fully settled, with a 0.2s breath.
+   Stage 3 (slideshow):
+     JS-side BOOT_DELAY = 7600ms before .show starts.
+   Wrapped in prefers-reduced-motion:no-preference so reduced-motion
+   users see a static, already-open laptop. */
 @media (prefers-reduced-motion: no-preference){
-  .laptop-3d{animation:laptopTurn 1.5s .15s cubic-bezier(.2,.7,.15,1) both}
-  .laptop-lid{animation:lidOpen 1.6s .9s cubic-bezier(.22,.85,.28,1) both}
+  .laptop-3d{animation:laptopTurn 3.6s .3s cubic-bezier(.16,.84,.32,1) both}
+  .laptop-lid{animation:lidOpen 3.4s 4.0s cubic-bezier(.22,.86,.28,1) both}
 }
 @keyframes laptopTurn{
-  0%   {transform:rotateY(-26deg) rotateX(14deg) translateY(20px) scale(.92);opacity:0}
-  18%  {opacity:1}
-  60%  {transform:rotateY(-4deg) rotateX(2deg) translateY(0) scale(1)}
-  100% {transform:rotateY(0) rotateX(0) translateY(0) scale(1);opacity:1}
+  0%   {transform:rotateY(-38deg) rotateX(10deg) translateZ(-60px) translateY(28px) scale(.9);opacity:0}
+  12%  {opacity:1}
+  55%  {transform:rotateY(-12deg) rotateX(3deg) translateZ(-15px) translateY(6px) scale(.97)}
+  100% {transform:rotateY(0) rotateX(0) translateZ(0) translateY(0) scale(1);opacity:1}
 }
 @keyframes lidOpen{
-  0%   {transform:rotateX(-105deg)}
-  82%  {transform:rotateX(3deg)}
+  0%   {transform:rotateX(-100deg)}
+  80%  {transform:rotateX(2deg)}
   100% {transform:rotateX(0)}
 }
 
@@ -1230,12 +1261,12 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   document.addEventListener('visibilitychange', function(){
     if(document.hidden) stop(); else if(!userPaused) start();
   });
-  // Wait for the hero laptop intro to finish before booting the slideshow.
-  // Stage 1 (rotateIn): 0.15s + 1.5s = ends at 1.65s
-  // Stage 2 (lidOpen):  0.9s  + 1.6s = ends at 2.5s
-  // Stage 3 (slides):   2.7s — small breath after the lid settles
+  // Wait for the cinematic laptop intro to finish before booting the slideshow.
+  // Stage 1 (rotateIn — closed, shield cover visible): 0.3s + 3.6s = ends at 3.9s
+  // Stage 2 (lidOpen — slow lift):                     4.0s + 3.4s = ends at 7.4s
+  // Stage 3 (slides start):                            7.6s — small breath after the lid settles
   // In reduced-motion the laptop is already flat/open, so start immediately.
-  var BOOT_DELAY = 2700;
+  var BOOT_DELAY = 7600;
   if (reduced) start(); else setTimeout(start, BOOT_DELAY);
 })();
 
