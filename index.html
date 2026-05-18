@@ -524,28 +524,15 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   nav{padding:12px 0}
   .hero{padding:110px 0 60px}
   .sec,.close{padding:80px 0}
-  /* Hide laptop chrome on phone — slideshow becomes full-bleed */
-  .laptop-frame{filter:none;max-width:none;justify-self:stretch}
-  .laptop-lid{padding:0;background:transparent;border:none;box-shadow:none;border-radius:0}
-  .laptop-bezel{padding:0;border-radius:0;background:#0c1322}
-  .laptop-bezel::before{display:none}
-  .laptop-base{display:none}
+  /* Skip the whole slideshow on phones — content is too dense for 4:5
+     portrait, and the hero text + CTAs already carry the message. */
+  .laptop-frame{display:none}
   .pillar{padding:40px 28px}
   .pillar h3{font-size:48px}
   .prob-stats .st{padding:36px 28px}
   .prob-stats .v{font-size:64px}
   .hero-foot{font-size:9.5px;gap:0}
   .hero-foot .item{padding:0 12px}
-  .slide{padding:24px}
-  .sU-grid{grid-template-columns:repeat(2,1fr)}
-  .sU-grid .u:nth-child(4n){border-right:1px solid var(--border)}
-  .sU-grid .u:nth-child(2n){border-right:none}
-  .sU-grid .u:nth-child(n+5){border-bottom:1px solid var(--border)}
-  .sU-grid .u:nth-child(n+7){border-bottom:none}
-  .sF-flow{grid-template-columns:repeat(3,1fr);gap:10px}
-  .sF-flow .conn{display:none}
-  .sM-grid{grid-template-columns:repeat(3,1fr)}
-  .sM-grid .m{border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
   .integrations{grid-template-columns:1fr}
   .integ{border-right:none!important;border-bottom:1px solid var(--border)!important}
   .integ:last-child{border-bottom:none!important}
@@ -574,23 +561,6 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   .q-chart::before{top:8%;bottom:8%}
   .q-chart::after{left:8%;right:8%}
 
-  /* Slideshow: 16:10 cropped slides too tight at 350px wide (only 219px tall).
-     Switch to a phone-friendly 4:5 portrait ratio + tighten slide padding so
-     each slide has room to breathe instead of clipping content. */
-  .show{aspect-ratio:4/5}
-  .slide{padding:18px 16px}
-  .slide h2{font-size:clamp(20px,5vw,28px);line-height:1.08}
-  .slide .sec-sub,.slide .s-sub{font-size:12.5px;line-height:1.45}
-  .slide .s-top,.slide .s-bottom{font-size:9px;letter-spacing:.12em}
-  .show-pause{top:8px;right:8px;width:24px;height:24px}
-  /* Inner grids inside slides need extra-tight padding to fit at 4:5 */
-  .sM-grid .m,.sU-grid .u{padding:7px 8px}
-  .sM-grid .m h6,.sU-grid .u h5{font-size:9.5px}
-  .sU-grid .u p{font-size:8.5px;line-height:1.3}
-  .sF-flow{gap:6px}
-  .sF-flow .ball{width:24px;height:24px;font-size:11px;margin-bottom:5px}
-  /* Dots row: tap targets need to stay reachable */
-  #dots button{width:24px;height:24px}
 }
 @media(max-width:380px){
   .nv-cta span,.nv-cta{font-size:11px;padding:7px 10px}
@@ -1187,6 +1157,9 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
 (function(){
   var show = document.getElementById('show');
   if (!show) return;
+  // Skip slideshow entirely on small screens (the .laptop-frame is display:none ≤720px).
+  // Bail before wiring timers / listeners so we don't burn battery on phones.
+  if (window.matchMedia && window.matchMedia('(max-width: 720px)').matches) return;
   var slides = show.querySelectorAll('.slide');
   var dots = document.querySelectorAll('#dots button');
   var pauseBtn = document.getElementById('showPause');
