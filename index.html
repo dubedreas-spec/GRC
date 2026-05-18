@@ -562,17 +562,35 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   .q-lab:not(.us){display:none}
   .quadrant-sec{padding:80px 0}
   .q-chart-wrap{padding:14px}
-  /* Tighter axis + quadrant labels so the rotated Y-axis doesn't collide with VISIONARIES */
-  .q-axis{font-size:8px;letter-spacing:.1em}
-  .q-axis.q-y{left:4px}
-  .q-axis.q-x{bottom:6px}
-  .q-quad{font-size:8px;letter-spacing:.12em}
-  .q-quad.q-tl{top:12px;left:22px}
-  .q-quad.q-tr{top:12px;right:10px}
-  .q-quad.q-bl{bottom:24px;left:22px}
-  .q-quad.q-br{bottom:24px;right:10px}
-  .q-chart::before{top:10%;bottom:10%}
-  .q-chart::after{left:10%;right:10%}
+  /* Mobile: hide the rotated Y-axis label (overlaps VISIONARIES on narrow charts);
+     keep the X-axis. The 4 quadrant labels carry the vertical meaning. */
+  .q-axis.q-y{display:none}
+  .q-axis.q-x{bottom:6px;font-size:8px;letter-spacing:.1em}
+  .q-quad{font-size:8.5px;letter-spacing:.12em}
+  .q-quad.q-tl{top:10px;left:12px}
+  .q-quad.q-tr{top:10px;right:12px}
+  .q-quad.q-bl{bottom:22px;left:12px}
+  .q-quad.q-br{bottom:22px;right:12px}
+  .q-chart::before{top:8%;bottom:8%}
+  .q-chart::after{left:8%;right:8%}
+
+  /* Slideshow: 16:10 cropped slides too tight at 350px wide (only 219px tall).
+     Switch to a phone-friendly 4:5 portrait ratio + tighten slide padding so
+     each slide has room to breathe instead of clipping content. */
+  .show{aspect-ratio:4/5}
+  .slide{padding:18px 16px}
+  .slide h2{font-size:clamp(20px,5vw,28px);line-height:1.08}
+  .slide .sec-sub,.slide .s-sub{font-size:12.5px;line-height:1.45}
+  .slide .s-top,.slide .s-bottom{font-size:9px;letter-spacing:.12em}
+  .show-pause{top:8px;right:8px;width:24px;height:24px}
+  /* Inner grids inside slides need extra-tight padding to fit at 4:5 */
+  .sM-grid .m,.sU-grid .u{padding:7px 8px}
+  .sM-grid .m h6,.sU-grid .u h5{font-size:9.5px}
+  .sU-grid .u p{font-size:8.5px;line-height:1.3}
+  .sF-flow{gap:6px}
+  .sF-flow .ball{width:24px;height:24px;font-size:11px;margin-bottom:5px}
+  /* Dots row: tap targets need to stay reachable */
+  #dots button{width:24px;height:24px}
 }
 @media(max-width:380px){
   .nv-cta span,.nv-cta{font-size:11px;padding:7px 10px}
