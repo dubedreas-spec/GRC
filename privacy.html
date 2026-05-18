@@ -407,25 +407,60 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
 </footer>
 
 <script>
-// ─── Formspree async submit (DSAR form) ───
+// ─── Formspree async submit (DSAR form, JSON body — matches the working integration) ───
 (function(){
   var f = document.getElementById('dsarForm');
   if (!f) return;
+  var btn = f.querySelector('.submit');
+  var errLine = document.createElement('div');
+  errLine.id = 'df-err';
+  errLine.setAttribute('role','alert');
+  errLine.style.cssText = 'display:none;margin-bottom:12px;padding:10px 12px;border:1px solid #c44;background:#fef0f0;color:#a02;font-size:13px;line-height:1.4;font-family:Inter Tight,sans-serif';
+  btn.parentNode.insertBefore(errLine, btn);
+  function showError(msg){ errLine.textContent = msg; errLine.style.display = 'block'; }
+  function hideError(){ errLine.style.display = 'none'; }
+
   f.addEventListener('submit', function(e){
     if (f.action.indexOf('YOUR_FORM_ID') !== -1) return;
     e.preventDefault();
-    var btn = f.querySelector('.submit');
+    hideError();
     btn.disabled = true;
+    var originalHTML = btn.innerHTML;
     btn.innerHTML = 'Sending…';
+
+    var data = {
+      request_type: (f.querySelector('#df-subject')||{}).value || '',
+      name:         (f.querySelector('#df-name')   ||{}).value || '',
+      email:        (f.querySelector('#df-email')  ||{}).value || '',
+      message:      (f.querySelector('#df-msg')    ||{}).value || '',
+      consent: f.querySelector('#df-consent') && f.querySelector('#df-consent').checked ? 'yes' : 'no',
+      _subject: 'DubeAI - Privacy request (' + ((f.querySelector('#df-subject')||{}).value || '') + ')'
+    };
+
     fetch(f.action, {
       method:'POST',
-      headers:{'Accept':'application/json'},
-      body:new FormData(f)
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body: JSON.stringify(data)
     }).then(function(r){
-      if (r.ok) f.classList.add('sent');
-      else { btn.disabled = false; btn.innerHTML = 'Try again'; }
-    }).catch(function(){
-      btn.disabled = false; btn.innerHTML = 'Try again';
+      return r.json().then(function(j){ return {ok:r.ok, status:r.status, body:j}; }).catch(function(){ return {ok:r.ok, status:r.status, body:null}; });
+    }).then(function(res){
+      if (res.ok) {
+        f.classList.add('sent');
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = originalHTML;
+        var msg = 'Submission failed (HTTP ' + res.status + ').';
+        if (res.body && res.body.errors && res.body.errors.length) {
+          msg = res.body.errors.map(function(x){ return x.message || x.code; }).join(' · ');
+        } else if (res.body && res.body.error) {
+          msg = res.body.error;
+        }
+        showError(msg + ' If this keeps happening, please reach us via the Imprint.');
+      }
+    }).catch(function(err){
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+      showError('Network error: ' + (err && err.message ? err.message : 'request failed'));
     });
   });
 })();

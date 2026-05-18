@@ -1110,30 +1110,62 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
 </footer>
 
 <script>
-// ─── Formspree async submit ───
+// ─── Formspree async submit (JSON body — matches the previous working integration) ───
 (function(){
   var f = document.getElementById('reqForm');
   if (!f) return;
+  // Inject an inline error line just above the submit button so users see real failure reasons
+  var btn = f.querySelector('.submit');
+  var errLine = document.createElement('div');
+  errLine.id = 'rf-err';
+  errLine.setAttribute('role','alert');
+  errLine.style.cssText = 'display:none;margin-bottom:12px;padding:10px 12px;border:1px solid #c44;background:#fef0f0;color:#a02;font-size:13px;line-height:1.4;font-family:Inter Tight,sans-serif';
+  btn.parentNode.insertBefore(errLine, btn);
+  function showError(msg){ errLine.textContent = msg; errLine.style.display = 'block'; }
+  function hideError(){ errLine.style.display = 'none'; }
+
   f.addEventListener('submit', function(e){
     if (f.action.indexOf('YOUR_FORM_ID') !== -1) return; // let it submit normally so the user notices the placeholder
     e.preventDefault();
-    var btn = f.querySelector('.submit');
+    hideError();
     btn.disabled = true;
+    var originalHTML = btn.innerHTML;
     btn.innerHTML = 'Sending…';
+
+    // Collect fields as JSON (matches the pre-redesign working pattern)
+    var data = {
+      name:    (f.querySelector('#rf-name')   || {}).value || '',
+      email:   (f.querySelector('#rf-email')  || {}).value || '',
+      company: (f.querySelector('#rf-company')|| {}).value || '',
+      message: (f.querySelector('#rf-msg')    || {}).value || '',
+      consent: f.querySelector('#rf-consent') && f.querySelector('#rf-consent').checked ? 'yes' : 'no',
+      _subject: 'DubeAI - Demo request: ' + ((f.querySelector('#rf-name')||{}).value || '') + ' / ' + ((f.querySelector('#rf-company')||{}).value || '')
+    };
+
     fetch(f.action, {
       method:'POST',
-      headers:{'Accept':'application/json'},
-      body:new FormData(f)
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body: JSON.stringify(data)
     }).then(function(r){
-      if (r.ok) {
+      return r.json().then(function(j){ return {ok:r.ok, status:r.status, body:j}; }).catch(function(){ return {ok:r.ok, status:r.status, body:null}; });
+    }).then(function(res){
+      if (res.ok) {
         f.classList.add('sent');
       } else {
         btn.disabled = false;
-        btn.innerHTML = 'Try again';
+        btn.innerHTML = originalHTML;
+        var msg = 'Submission failed (HTTP ' + res.status + ').';
+        if (res.body && res.body.errors && res.body.errors.length) {
+          msg = res.body.errors.map(function(x){ return x.message || x.code; }).join(' · ');
+        } else if (res.body && res.body.error) {
+          msg = res.body.error;
+        }
+        showError(msg + ' If this keeps happening, please email ai4grc@dube.eu.');
       }
-    }).catch(function(){
+    }).catch(function(err){
       btn.disabled = false;
-      btn.innerHTML = 'Try again';
+      btn.innerHTML = originalHTML;
+      showError('Network error: ' + (err && err.message ? err.message : 'request failed') + '. If this keeps happening, please email ai4grc@dube.eu.');
     });
   });
 })();
