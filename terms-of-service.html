@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" href="assets/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/shield-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png"/>
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+<link rel="manifest" href="assets/site.webmanifest"/>
+<title>Terms of Service — DubeAI</title>
+<meta name="description" content="Terms of Service governing the purchase, licensing, and use of the DubeAI software platform."/>
+<meta name="application-name" content="DubeAI"/>
+<link rel="canonical" href="https://www.dube.eu/terms-of-service.html"/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#0F1724"/>
+
+<!-- FONTS — see index.html for setup notes. -->
+<link rel="preload" as="font" href="assets/fonts/InterTight-800.woff2" type="font/woff2" crossorigin/>
+<style>
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/InterTight-500.woff2') format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/InterTight-700.woff2') format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/InterTight-800.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/JetBrainsMono-500.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/JetBrainsMono-700.woff2') format('woff2')}
+</style>
+<style>
+:root{
+  --cyan:#3BB7BF;--cyan-dim:#2a8a90;--green:#8BC540;--green-dim:#6FA01F;
+  --navy:#0F1724;--navy-deep:#070b14;
+  --bg:#f5f7fa;--bg-2:#ffffff;--bg-3:#eceff4;
+  --surface:rgba(15,23,36,.04);--surface-h:rgba(15,23,36,.07);
+  --border:rgba(15,23,36,.10);--border-h:rgba(15,23,36,.22);
+  --text:#0F1724;--muted:rgba(15,23,36,.62);--dim:rgba(15,23,36,.42);--faint:rgba(15,23,36,.22);
+  --red:#e03131;--orange:#e8590c;--violet:#7048e8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:'Inter Tight',Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+.lockup{display:inline-flex;align-items:center}
+.lockup img{height:38px;width:auto;display:block}
+.lockup.sm img{height:30px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rgba(245,247,250,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nv-inner{max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nv-links{display:flex;gap:36px;font-size:13.5px;color:var(--muted);font-weight:500}
+.nv-links a:hover{color:var(--navy)}
+.nv-cta{font-size:13px;font-weight:600;padding:10px 18px;background:var(--navy);color:#fff;transition:all .2s;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--navy)}
+.nv-cta:hover{background:var(--cyan);border-color:var(--cyan);color:var(--navy);transform:translateY(-1px)}
+.nv-actions{display:flex;align-items:center;gap:10px}
+.nv-login{font-size:13px;font-weight:600;padding:10px 14px;color:var(--navy);border:1px solid var(--border-h);transition:all .2s;display:inline-flex;align-items:center;gap:7px;background:transparent}
+.nv-login:hover{border-color:var(--navy);background:var(--surface)}
+@media(max-width:980px){.nv-login{display:none}}
+
+.legal-wrap{max-width:1180px;margin:0 auto;padding:140px 40px 80px}
+.legal-head{margin-bottom:48px;max-width:760px}
+.label{display:inline-flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.label::before{content:"[ ";color:var(--faint);font-weight:400}
+.label::after{content:" ]";color:var(--faint);font-weight:400}
+.label .num{color:var(--faint);font-weight:500}
+h1.legal-h{font-family:'Inter Tight',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);line-height:1.02;letter-spacing:-.035em;color:var(--navy);margin-bottom:16px}
+.legal-meta{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:640px;margin-top:18px}
+
+.legal-body{display:grid;grid-template-columns:240px 1fr;gap:64px;align-items:start}
+aside.toc{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 120px);overflow-y:auto;padding-right:8px}
+.toc-h{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;font-weight:700}
+.toc-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px}
+.toc-list a{color:var(--muted);border-left:2px solid var(--border);padding:4px 0 4px 12px;transition:color .15s,border-color .15s;display:block;line-height:1.4}
+.toc-list a:hover,.toc-list a.active{color:var(--navy);border-left-color:var(--cyan)}
+
+.prose{font-family:'Inter Tight',sans-serif;color:var(--text);max-width:760px}
+.prose>*+*{margin-top:1.1em}
+.prose h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-top:2.6em;padding-top:1.3em;border-top:1px solid var(--border);scroll-margin-top:96px}
+.prose h2:first-child{border-top:none;padding-top:0;margin-top:0}
+.prose h3{font-size:17px;font-weight:700;color:var(--navy);margin-top:1.6em;scroll-margin-top:96px}
+.prose p,.prose li{font-size:16.5px;line-height:1.7;color:var(--text)}
+.prose a{color:var(--cyan-dim);border-bottom:1px solid currentColor;transition:color .15s}
+.prose a:hover{color:var(--navy)}
+.prose ul,.prose ol{padding-left:1.4em;margin-top:.6em}
+.prose ul>li+li,.prose ol>li+li{margin-top:.4em}
+.prose strong{font-weight:700;color:var(--navy)}
+
+.callout{margin:1.4em 0;padding:14px 16px;border-left:3px solid var(--cyan);background:var(--surface);font-size:14.5px;line-height:1.55;color:var(--muted)}
+.callout strong{color:var(--navy)}
+.callout-warn{border-left-color:var(--orange);background:rgba(232,89,12,.05)}
+
+footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--bg)}
+.ft{max-width:1320px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.ftl{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--dim)}
+.ftl .lockup{opacity:.85}
+.ftr{display:flex;gap:28px}
+.ftr a{font-size:13px;color:var(--muted);transition:color .2s}
+.ftr a:hover{color:var(--text)}
+.ftr a[aria-current=page]{color:var(--text);cursor:default;pointer-events:none}
+
+@media(max-width:980px){
+  .legal-body{grid-template-columns:1fr;gap:24px}
+  aside.toc{position:static;max-height:none;overflow:visible;padding:0}
+  aside.toc details{border:1px solid var(--border);padding:0;background:var(--surface)}
+  aside.toc summary{cursor:pointer;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--navy)}
+  aside.toc details[open] summary{border-bottom:1px solid var(--border)}
+  aside.toc .toc-h{display:none}
+  aside.toc .toc-list{padding:14px 16px}
+}
+@media(max-width:720px){
+  .nv-inner,.ft{padding-left:20px;padding-right:20px}
+  .nv-links{display:none}
+  nav{padding:12px 0}
+  .legal-wrap{padding:110px 20px 60px}
+  .ft{flex-direction:column;align-items:flex-start}
+  .lockup img{height:28px}
+  .lockup.sm img{height:24px}
+  .nv-cta{font-size:12px;padding:8px 12px;gap:5px}
+  .nv-cta svg{width:11px;height:11px}
+}
+@media(max-width:380px){
+  .nv-cta{font-size:11px;padding:7px 10px}
+  .nv-cta svg{display:none}
+  .lockup img{height:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nv-inner">
+    <a href="index.html#top" class="lockup" aria-label="DubeAI home">
+      <img src="assets/lockup-horizontal.png" alt="DubeAI" width="2000" height="500"/>
+    </a>
+    <div class="nv-links">
+      <a href="index.html#problem">The trap</a>
+      <a href="index.html#pillars">Approach</a>
+      <a href="index.html#quadrant">Mystical Quadrant™</a>
+      <a href="index.html#contact">Request demo</a>
+    </div>
+    <div class="nv-actions">
+      <a href="https://ai4grc.dube.eu" class="nv-login" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+        Log on to GRC Platform
+      </a>
+      <a href="index.html#contact" class="nv-cta">Request a demo
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+  <header class="legal-head">
+    <div class="label"><span class="num">§</span> Legal · Terms of Service</div>
+    <h1 class="legal-h">Terms of Service.</h1>
+    <div class="legal-meta">Last updated: 2026-05-21 · v1.0</div>
+    <p class="lead">These terms govern the purchase, licensing, and use of the <strong>DubeAI</strong> software platform. Use of the website <strong>www.dube.eu</strong> itself is governed separately by our <a href="terms.html">Terms of Use</a>.</p>
+  </header>
+
+  <div class="legal-body">
+    <aside class="toc" aria-label="Table of contents">
+      <details>
+        <summary>Contents</summary>
+        <div class="toc-h">Contents</div>
+        <ol class="toc-list" id="tocList">
+          <li><a href="#provider-scope">1. Provider &amp; Scope</a></li>
+          <li><a href="#delivery">2. Scope of Delivery</a></li>
+          <li><a href="#contract">3. Contract Formation &amp; Duration</a></li>
+          <li><a href="#ip-licence">4. Intellectual Property &amp; Licence</a></li>
+          <li><a href="#data-confidentiality">5. Data Protection &amp; Confidentiality</a></li>
+          <li><a href="#payment">6. Payment Terms</a></li>
+          <li><a href="#deployment">7. Deployment &amp; Client Environment</a></li>
+          <li><a href="#warranty">8. Warranty &amp; Liability</a></li>
+          <li><a href="#termination">9. Termination &amp; Licence Revocation</a></li>
+          <li><a href="#governing-law">10. Governing Law</a></li>
+          <li><a href="#contact">11. Contact</a></li>
+        </ol>
+      </details>
+    </aside>
+
+    <article class="prose">
+
+      <h2 id="provider-scope">1. Provider &amp; Scope</h2>
+      <p>These Terms of Service govern the purchase and use of the DubeAI Platform &mdash; a perpetual, on-premise software product &mdash; together with the related onboarding services, supplied by DubeAI (Andreas Dube), Bad Homburg vor der Höhe, Germany (the &ldquo;Provider&rdquo;).</p>
+      <p>By engaging the Provider, you (the &ldquo;Client&rdquo;) agree to these Terms. They apply to all business relationships between the Provider and the Client, unless expressly agreed otherwise in writing.</p>
+
+      <h2 id="delivery">2. Scope of Delivery</h2>
+      <p>The Provider delivers the <strong>DubeAI GRC Platform</strong>, an AI-native software product covering Governance, Risk, and Compliance &mdash; including risk management, internal controls, audit management, executive dashboards, and integrations.</p>
+      <p><strong>One-time purchase, all modules included.</strong> The Client receives the Platform in the state and feature scope existing at the time of purchase, comprising <strong>all modules then available</strong>. The Client acknowledges that individual modules may be at <strong>different maturity levels</strong> &mdash; ranging from production-ready to early-stage or experimental. The maturity status of each module at the time of purchase is documented in the delivery package.</p>
+      <p><strong>Reference system &ldquo;Arche&rdquo;.</strong> The purchase includes a reference codebase named <strong>Arche</strong> &mdash; a pre-configured snapshot of the Platform with example data and configuration, intended as a starting point and reference implementation for the Client&rsquo;s own deployment.</p>
+      <p><strong>Delivery method.</strong> The Platform and Arche are handed over as a software package via a mutually agreed channel (e.g. file share, cloud storage, or physical media). The Provider does <strong>not</strong> host, operate, or provide the Platform as a service.</p>
+      <p><strong>Included onboarding services:</strong> (a) basic training on the Platform; (b) knowledge transfer covering architecture and operations; (c) deployment guidance for common target environments (e.g. AWS, Vercel/Neon).</p>
+      <p><strong>Not included by default.</strong> Deployment execution, hosting, day-to-day operations, monitoring, backups, software updates, and ongoing support are <strong>the Client&rsquo;s responsibility</strong>. Updates, additional training, custom modifications, and further support are available <strong>on demand</strong> under separate written agreement.</p>
+
+      <h2 id="contract">3. Contract Formation &amp; Duration</h2>
+      <p>A binding contract is formed upon the Client&rsquo;s written acceptance of a quote, order form, or SOW. Enquiries submitted via the website do not constitute a binding agreement.</p>
+      <p>The purchase of the Platform is a <strong>one-time transaction</strong>; the licence granted under Section 4 is perpetual. Any optional on-demand services (updates, additional training, modifications, support) are governed by separate written agreements, including their own term and notice periods.</p>
+
+      <h2 id="ip-licence">4. Intellectual Property &amp; Licence</h2>
+      <p><strong>Provider IP.</strong> The Platform, the Arche reference codebase, the source code, documentation, AI models, configurations, and all components and methodologies remain the exclusive intellectual property of the Provider. No ownership of the Platform or any of its components is transferred to the Client.</p>
+      <p><strong>Licence grant.</strong> Upon full payment, the Provider grants the Client a <strong>perpetual, worldwide, non-exclusive, non-transferable, non-sublicensable, royalty-free</strong> licence to use the Platform and Arche for the Client&rsquo;s own internal business purposes, including the right to <strong>install, deploy, operate, modify, extend, configure, integrate, and create derivative works</strong> &mdash; without ongoing dependency on the Provider.</p>
+      <p><strong>Prohibition of resale, transfer &amp; disclosure to third parties.</strong> The Client shall <strong>not</strong> sell, sublicense, rent, lease, lend, distribute, transfer, publish, make publicly available, or otherwise provide access to the Platform, Arche, their components, source code, documentation, AI models, configurations, modifications, or any derivative works to <strong>any third party</strong>. For the avoidance of doubt, &ldquo;third party&rdquo; expressly <strong>includes any other legal entity</strong> &mdash; even within the same corporate group as the Client (e.g. parent, subsidiary, sister, or affiliated companies, joint ventures, and other affiliates). Group-wide or affiliate use requires a separate written extension granted by the Provider.</p>
+      <p>Any unauthorised resale, disclosure, or transfer constitutes a material breach and will result in <strong>immediate legal action</strong>, including injunctive relief, claims for damages, contractual penalties, and criminal prosecution where applicable. The Provider reserves the right to seek emergency injunctive relief (einstweilige Verf&uuml;gung) without prior notice. The Client shall be liable for all legal costs incurred by the Provider in enforcing this provision, and the Provider may revoke the licence with immediate effect (see Section 9).</p>
+
+      <h2 id="data-confidentiality">5. Data Protection &amp; Confidentiality</h2>
+      <p>Because the Provider does not host or operate the Platform on the Client&rsquo;s behalf (see Sections 2 and 7), the Provider <strong>does not process Client or end-user data in the Client&rsquo;s production environment</strong>. The Client is the sole controller and processor of all data processed within its own deployment of the Platform.</p>
+      <p>The Provider processes personal data only within the scope of contract initiation, delivery, training, knowledge transfer, and any on-demand services expressly agreed &mdash; in accordance with the GDPR and applicable German data protection laws. Details are set out in our <a href="privacy.html">Privacy Policy</a>.</p>
+      <p>Both parties agree to maintain the confidentiality of all non-public information received from the other party. This obligation survives termination for three (3) years.</p>
+
+      <h2 id="payment">6. Payment Terms</h2>
+      <p>Invoices are payable within 30 days of issue. All amounts are exclusive of VAT and any other applicable taxes or duties. In the event of late payment, the Provider may withhold delivery of the Platform, suspend any agreed on-demand services, and claim default interest in accordance with &sect; 288 BGB, as well as any further statutory remedies.</p>
+
+      <h2 id="deployment">7. Deployment &amp; Client Environment</h2>
+      <p>The Platform is delivered as a software package; <strong>deployment, hosting, configuration, day-to-day operation, monitoring, backups, security patching, and incident response are the sole responsibility of the Client</strong>. The Client selects, procures, and operates its own target environment (e.g. AWS, Vercel/Neon, or any other infrastructure of its choice).</p>
+      <p>As part of onboarding, the Provider supplies <strong>deployment guidance</strong> for common target environments. Such guidance is informational; the Provider assumes no responsibility for the Client&rsquo;s chosen infrastructure, third-party services used by the Client, or the operational outcome of the Client&rsquo;s deployment.</p>
+      <p>The Provider does <strong>not</strong> retain access to the Client&rsquo;s environment after handover, unless expressly agreed in writing for specific on-demand services.</p>
+
+      <h2 id="warranty">8. Warranty &amp; Liability</h2>
+      <p><strong>As-delivered.</strong> The Platform and Arche are provided <strong>&ldquo;as is&rdquo;</strong>, in the state and feature scope existing at the time of delivery. The Client expressly acknowledges that individual modules are at <strong>different maturity levels</strong> (see Section 2), and that no functional or fitness guarantee is given for modules documented as early-stage or experimental beyond what is stated in the delivery package.</p>
+      <p><strong>No fitness for a particular purpose.</strong> The Provider makes no warranty that the Platform will meet any specific use case, performance target, or regulatory requirement of the Client beyond the functionality described in writing in the order documents and the delivery package.</p>
+      <p><strong>Statutory rights.</strong> The Client&rsquo;s mandatory statutory warranty rights under German law &mdash; in particular in cases of fraudulent concealment of defects (&sect; 444 BGB) &mdash; remain unaffected.</p>
+      <p><strong>Limitation of liability.</strong> The Provider&rsquo;s total aggregate liability shall not exceed the fees paid by the Client to the Provider in the twelve (12) months preceding the event giving rise to the claim. The Provider shall not be liable for indirect, incidental, or consequential damages, including loss of profits, loss of data, or business interruption. The foregoing limitations do <strong>not</strong> apply to liability for wilful misconduct or gross negligence, for injury to life, body, or health, or to any other liability that is mandatory under applicable law (in particular under the German Product Liability Act, ProdHaftG).</p>
+
+      <h2 id="termination">9. Termination &amp; Licence Revocation</h2>
+      <p>The licence granted under Section 4 is perpetual. As the purchase of the Platform is a one-time transaction, &ldquo;termination for cause&rdquo; in this Section primarily concerns any optional on-demand agreements (updates, additional services, support); either party may terminate such optional agreements for cause if the other materially breaches and fails to cure within 30 days of written notice.</p>
+      <p><strong>Licence revocation.</strong> The Provider may revoke the licence to the Platform and Arche with <strong>immediate effect</strong> in the event of a material breach by the Client of Section 4 (Intellectual Property &amp; Licence) &mdash; in particular any unauthorised resale, transfer, sublicensing, disclosure, or provision of access to a third party (including other legal entities within the Client&rsquo;s corporate group). Upon revocation, the Client shall cease all use of the Platform and Arche, and irretrievably delete or destroy all copies in its possession, confirming the same in writing on request. Damage and injunctive relief claims of the Provider remain unaffected.</p>
+
+      <h2 id="governing-law">10. Governing Law</h2>
+      <p>These Terms of Service are governed by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG). Exclusive place of jurisdiction: Frankfurt am Main, Germany.</p>
+
+      <h2 id="contact">11. Contact</h2>
+      <p><strong>DubeAI</strong> · Andreas Dube<br/>Bad Homburg vor der Höhe, Germany<br/>Email: ai4grc@dube.eu<br/>Web: <a href="https://www.dube.eu">www.dube.eu</a></p>
+
+      <div class="callout" style="margin-top:32px">
+        Related: <a href="imprint.html">Imprint</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="ft">
+    <div class="ftl">
+      <span class="lockup sm">
+        <img src="assets/lockup-horizontal.png" alt="DubeAI" width="2000" height="500"/>
+      </span>
+      <span>© 2026 · Andreas Dube · Bad Homburg, Germany</span>
+    </div>
+    <div class="ftr">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="terms-of-service.html" aria-current="page">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── TOC scroll-spy ───
+(function(){
+  var links = document.querySelectorAll('#tocList a');
+  if (!links.length) return;
+  var byId = {};
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if (sec) byId[id] = a;
+  });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var a = byId[e.target.id];
+        if (a){
+          links.forEach(function(l){ l.classList.remove('active'); });
+          a.classList.add('active');
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+  Object.keys(byId).forEach(function(id){
+    var sec = document.getElementById(id);
+    if (sec) obs.observe(sec);
+  });
+})();
+</script>
+
+</body>
+</html>
