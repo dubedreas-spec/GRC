@@ -53,7 +53,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rg
 .nv-actions{display:flex;align-items:center;gap:10px}
 .nv-login{font-size:13px;font-weight:600;padding:10px 14px;color:var(--navy);border:1px solid var(--border-h);transition:all .2s;display:inline-flex;align-items:center;gap:7px;background:transparent}
 .nv-login:hover{border-color:var(--navy);background:var(--surface)}
-@media(max-width:980px){.nv-login{display:none}}
+@media(max-width:980px){.nv-login{padding:9px 11px}.nv-login .nv-login-label{display:none}.nv-login svg{width:16px;height:16px}}
 
 .legal-wrap{max-width:1180px;margin:0 auto;padding:140px 40px 80px}
 .legal-head{margin-bottom:48px;max-width:760px}
@@ -138,9 +138,9 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
       <a href="index.html#contact">Request demo</a>
     </div>
     <div class="nv-actions">
-      <a href="https://ai4grc.dube.eu" class="nv-login" rel="noopener">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
-        Log on to GRC Platform
+      <a href="https://ai4grc.dube.eu" class="nv-login" rel="noopener" aria-label="Log on to GRC Platform" title="Log on to GRC Platform">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+        <span class="nv-login-label">Log on to GRC Platform</span>
       </a>
       <a href="index.html#contact" class="nv-cta">Request a demo
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
