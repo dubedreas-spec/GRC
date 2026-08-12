@@ -266,15 +266,6 @@ h1.hero-h .b{color:var(--green)}
 .sL-tgt{margin-top:12px;display:flex;flex-wrap:wrap;gap:5px}
 .sL-tgt span{font-family:'JetBrains Mono',monospace;font-size:8.5px;font-weight:600;letter-spacing:.12em;padding:4px 9px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--muted)}
 
-/* Slide 11 — onboarding */
-.sO-grid{display:grid;grid-template-columns:140px 1fr 1fr;gap:0;margin-top:14px;border:1px solid var(--border)}
-.sO-grid > div{padding:14px;border-right:1px solid var(--border)}
-.sO-grid > div:last-child{border-right:none}
-.sO-grid .big{font-family:'Inter Tight',sans-serif;font-size:62px;font-weight:800;color:var(--green);line-height:.9;letter-spacing:-.045em;display:flex;flex-direction:column;justify-content:center}
-.sO-grid .big .lb{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--dim);letter-spacing:.16em;font-weight:600;margin-top:4px}
-.sO-grid .c h6{font-size:11.5px;font-weight:700;color:#fff;letter-spacing:-.005em;margin-bottom:4px}
-.sO-grid .c p{font-size:10px;color:var(--muted);line-height:1.45}
-
 /* Slide 12 — quadrant */
 .sQ-grid{flex:1;display:grid;grid-template-columns:1fr 1.1fr;gap:14px;margin-top:14px;align-items:stretch;min-height:0}
 .sQ-grid .qchart{position:relative;border:1px solid var(--border);background:rgba(255,255,255,.02);aspect-ratio:1;align-self:center;width:100%;max-width:240px}
@@ -406,7 +397,7 @@ h2.sec-h .b{color:var(--green)}
 .integ .logo{font-family:'Inter Tight',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:-.025em}
 .integ .lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:24px}
 
-/* ───────── MYSTICAL QUADRANT ───────── */
+/* ───────── VENDOR EVALUATION ───────── */
 .quadrant-sec{padding:120px 0;position:relative;overflow:hidden;border-top:1px solid var(--border)}
 .quadrant-sec::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 500px at 85% 50%,rgba(139,197,64,.08),transparent 60%),radial-gradient(600px 400px at 10% 100%,rgba(59,183,191,.06),transparent 60%)}
 .quadrant-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;position:relative;z-index:2}
@@ -544,14 +535,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   .lockup.sm img{height:24px}
   .nv-cta{font-size:12px;padding:8px 12px;gap:5px}
   .nv-cta svg{width:11px;height:11px}
-  /* Magic Quadrant: <picture> swaps lockup → shield-only on mobile (see HTML), shrink and re-centre marker */
+  /* Vendor-evaluation chart: <picture> swaps lockup → shield-only on mobile (see HTML), shrink and re-centre marker */
   .q-dot.us{width:24px;height:24px;background:transparent;box-shadow:0 0 0 6px rgba(139,197,64,.18),0 4px 12px rgba(139,197,64,.36);border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center}
   .q-dot.us picture,.q-dot.us img{height:24px;width:24px;display:block;filter:none;border-radius:50%}
   /* Other vendor labels overlap each other on narrow charts — hide them, keep the dots */
   .q-lab:not(.us){display:none}
   .quadrant-sec{padding:80px 0}
   .q-chart-wrap{padding:14px}
-  /* Mobile: hide the rotated Y-axis label (overlaps VISIONARIES on narrow charts);
+  /* Mobile: hide the rotated Y-axis label (overlaps INNOVATORS on narrow charts);
      keep the X-axis. The 4 quadrant labels carry the vertical meaning. */
   .q-axis.q-y{display:none}
   .q-axis.q-x{bottom:6px;font-size:8px;letter-spacing:.1em}
@@ -581,7 +572,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
     <div class="nv-links">
       <a href="#problem" data-nav>The trap</a>
       <a href="#pillars" data-nav>Approach</a>
-      <a href="#quadrant" data-nav>Mystical Quadrant™</a>
+      <a href="#quadrant" data-nav>Vendor evaluation</a>
       <a href="#contact" data-nav>Request demo</a>
     </div>
     <div class="nv-actions">
@@ -637,7 +628,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
           <div class="slide s1 active" data-i="0">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>Enterprise GRC · 2026</span>
-              <span>01 / 12 · Cover</span>
+              <span>01 / 11 · Cover</span>
             </div>
             <div>
               <div class="big">Own it.<br/><span class="a">Shape it.</span><br/><span class="b">Deploy it.</span></div>
@@ -651,7 +642,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
           <div class="slide sP" data-i="1">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>02 · The Problem</span>
-              <span>02 / 12 · The GRC software trap</span>
+              <span>02 / 11 · The GRC software trap</span>
             </div>
             <div>
               <h2>You rent the software<br/>that runs your <span class="strike">compliance</span> business.</h2>
@@ -661,14 +652,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
                 <div class="p p3"><div class="v">0 %</div><h5>Of the code is yours</h5><p>Vendor pivots, prices, acquires — you move.</p></div>
               </div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>02 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>02 / 11</span></div>
           </div>
 
           <!-- 03 — Our Answer -->
           <div class="slide sA" data-i="2">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>03 · Our Answer</span>
-              <span>03 / 12 · Introducing DubeAI</span>
+              <span>03 / 11 · Introducing DubeAI</span>
             </div>
             <div>
               <h2>A platform you <span class="a">own</span>, you change,<br/>you <span class="b">deploy anywhere</span>.</h2>
@@ -678,14 +669,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
                 <div class="c"><div class="n">03 — DEPLOY</div><h4>Any cloud. On-prem.</h4><p>AWS, Azure, GCP, your datacentre. Switch anytime.</p></div>
               </div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>03 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>03 / 11</span></div>
           </div>
 
           <!-- 04 — The Advantage / 8 USPs -->
           <div class="slide sU" data-i="3">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>04 · The Advantage</span>
-              <span>04 / 12 · Eight reasons it&rsquo;s different</span>
+              <span>04 / 11 · Eight reasons it&rsquo;s different</span>
             </div>
             <div>
               <h2>A new deal for <span class="a">enterprise software</span>.</h2>
@@ -696,18 +687,18 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
                 <div class="u f"><div class="n">04</div><h5>AI Workflow</h5><p>From idea to prod in prompts.</p></div>
                 <div class="u"><div class="n">05</div><h5>One-Prompt Docs</h5><p>Specs &amp; training, always current.</p></div>
                 <div class="u"><div class="n">06</div><h5>Zero Lock-In</h5><p>Your code, your hosting.</p></div>
-                <div class="u"><div class="n">07</div><h5>Expert Onboarding</h5><p>Min. one day, same for everyone.</p></div>
+                <div class="u"><div class="n">07</div><h5>Expert Onboarding</h5><p>Included &amp; hands-on, same for everyone.</p></div>
                 <div class="u"><div class="n">08</div><h5>Community</h5><p>Free updates, Q&amp;A, knowledge.</p></div>
               </div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>04 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>04 / 11</span></div>
           </div>
 
           <!-- 05 — The Difference -->
           <div class="slide sD" data-i="4">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>05 · The Difference</span>
-              <span>05 / 12 · SaaS GRC vs. DubeAI</span>
+              <span>05 / 11 · SaaS GRC vs. DubeAI</span>
             </div>
             <div>
               <h2>A different deal,<br/><span class="a">top to bottom</span>.</h2>
@@ -734,14 +725,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
                 </div>
               </div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>05 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>05 / 11</span></div>
           </div>
 
-          <!-- 06 — Modular GRC / 12 modules -->
+          <!-- 06 — Modular GRC / 11 modules -->
           <div class="slide sM" data-i="5">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>06 · Modular GRC</span>
-              <span>06 / 12 · One platform, thirteen modules</span>
+              <span>06 / 11 · One platform, thirteen modules</span>
             </div>
             <div>
               <h2>One core. <span class="b">Thirteen divisions</span>.</h2>
@@ -762,14 +753,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
               </div>
               <div class="sM-foot"><span>API Integration</span><span>AI Engine of Choice</span><span>Deployed in Your Cloud</span></div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>06 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>06 / 11</span></div>
           </div>
 
           <!-- 07 — AI Change Engine -->
           <div class="slide sF" data-i="6">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>07 · AI Change Engine</span>
-              <span>07 / 12 · From idea to production in prompts</span>
+              <span>07 / 11 · From idea to production in prompts</span>
             </div>
             <div>
               <h2>What took <span class="strike">weeks</span>, now takes <span class="a">prompts</span>.</h2>
@@ -787,14 +778,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
                 <div class="step"><div class="ball b3">6</div><h5>Ship</h5><p>Reversible.</p></div>
               </div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>07 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>07 / 11</span></div>
           </div>
 
           <!-- 08 — Product / Live Dashboards -->
           <div class="slide sB" data-i="7">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>08 · Product · Controls Mgmt</span>
-              <span>08 / 12 · Live dashboards</span>
+              <span>08 / 11 · Live dashboards</span>
             </div>
             <div>
               <h2>Real product. <span class="a">Real data.</span></h2>
@@ -820,14 +811,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
                 </div>
               </div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>08 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>08 / 11</span></div>
           </div>
 
           <!-- 09 — Commercial -->
           <div class="slide sC" data-i="8">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>09 · Commercial Model</span>
-              <span>09 / 12 · The math</span>
+              <span>09 / 11 · The math</span>
             </div>
             <div>
               <h2>Pay once. <span class="b">Own forever.</span></h2>
@@ -847,14 +838,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
               </div>
               <div class="sC-delta"><span>YOUR DELTA · 5 YEARS</span><b>→ €1M+ saved</b></div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>09 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>09 / 11</span></div>
           </div>
 
           <!-- 10 — Zero Lock-in -->
           <div class="slide sL" data-i="9">
             <div class="s-top">
               <span class="l"><img src="assets/app-icon.png" alt=""/>10 · Zero Lock-in</span>
-              <span>10 / 12 · Sovereignty</span>
+              <span>10 / 11 · Sovereignty</span>
             </div>
             <div>
               <h2><span class="a">Zero</span> vendor lock-in.<br/>100% data sovereignty.</h2>
@@ -865,31 +856,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
               </div>
               <div class="sL-tgt"><span>AWS</span><span>Azure</span><span>GCP</span><span>OpenShift</span><span>On-Prem</span><span>Air-Gapped</span></div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>10 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>10 / 11</span></div>
           </div>
 
-          <!-- 11 — Onboarding -->
-          <div class="slide sO" data-i="10">
+          <!-- 11 — Next Steps -->
+          <div class="slide sE" data-i="10">
             <div class="s-top">
-              <span class="l"><img src="assets/app-icon.png" alt=""/>11 · Onboarding &amp; Community</span>
-              <span>11 / 12 · Same for everyone</span>
-            </div>
-            <div>
-              <h2>Expert onboarding.<br/><span class="b">Included, not upsold.</span></h2>
-              <div class="sO-grid">
-                <div class="big">1d<span class="lb">MINIMUM · HANDS-ON</span></div>
-                <div class="c"><h6>Same premium experience</h6><p>Startup or billion-dollar enterprise — identical attention. No tiered support. No pay-to-play priority.</p></div>
-                <div class="c"><h6>Community, not subscription</h6><p>Free access to Q&amp;A, knowledge base, peer-to-peer support, and platform updates.</p></div>
-              </div>
-            </div>
-            <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>11 / 12</span></div>
-          </div>
-
-          <!-- 12 — Next Steps -->
-          <div class="slide sE" data-i="11">
-            <div class="s-top">
-              <span class="l"><img src="assets/app-icon.png" alt=""/>12 · Next Steps</span>
-              <span>12 / 12 · Ready when you are</span>
+              <span class="l"><img src="assets/app-icon.png" alt=""/>11 · Next Steps</span>
+              <span>11 / 11 · Ready when you are</span>
             </div>
             <div class="sE-body">
               <h2>Stop renting.<br/><span class="a">Start owning.</span></h2>
@@ -897,7 +871,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
               <div class="ct"><a href="#contact" class="bt p">Book a pilot</a><a href="#contact" class="bt">Request a demo</a></div>
               <div class="em">DUBE.EU</div>
             </div>
-            <div class="s-bottom"><span>DUBEAI · CONFIDENTIAL</span><span>12 / 12</span></div>
+            <div class="s-bottom"><span>DUBEAI · CONFIDENTIAL</span><span>11 / 11</span></div>
           </div>
 
         </div>
@@ -913,7 +887,6 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
           <button type="button" data-d="8" aria-label="Slide 9"></button>
           <button type="button" data-d="9" aria-label="Slide 10"></button>
           <button type="button" data-d="10" aria-label="Slide 11"></button>
-          <button type="button" data-d="11" aria-label="Slide 12"></button>
         </div>
       </div>
           </div>
@@ -983,14 +956,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<!-- ══════════════════════ MYSTICAL QUADRANT ══════════════════════ -->
+<!-- ══════════════════════ VENDOR EVALUATION ══════════════════════ -->
 <section class="sec quadrant-sec" id="quadrant">
   <div class="wrap">
     <div class="quadrant-grid">
       <div class="q-left ao">
         <div class="label"><span class="num">03</span> The Analyst Ritual</div>
-        <h2 class="sec-h">The <span class="strike">Mystical</span> <span class="a">Quadrant™</span>.</h2>
-        <p class="sec-sub">Magic Quadrants, Waves, Peer Insights — the theatre of vendor rankings made sense when primary research was expensive. <b>It isn&rsquo;t anymore.</b></p>
+        <h2 class="sec-h">The <span class="strike">mystical</span> <span class="a">vendor evaluation</span>.</h2>
+        <p class="sec-sub">Quadrants, waves, peer rankings — the theatre of analyst reports made sense when primary research was expensive. <b>It isn&rsquo;t anymore.</b></p>
         <div class="q-bullets">
           <div class="q-b"><span class="x">✕</span><div><h5>Two axes, ten vendors</h5><p>A universe of trade-offs flattened to a dot.</p></div></div>
           <div class="q-b"><span class="x">✕</span><div><h5>18-month research cycle</h5><p>In a market where we ship changes by lunch.</p></div></div>
@@ -1008,12 +981,12 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
           <div class="q-tag">AI-GENERATED · NOT A REAL REPORT</div>
         </div>
         <div class="q-chart">
-          <span class="q-axis q-y">COMPLETENESS OF VISION →</span>
-          <span class="q-axis q-x">ABILITY TO EXECUTE →</span>
-          <div class="q-quad q-tl">VISIONARIES</div>
-          <div class="q-quad q-tr">LEADERS</div>
-          <div class="q-quad q-bl">NICHE PLAYERS</div>
-          <div class="q-quad q-br">CHALLENGERS</div>
+          <span class="q-axis q-y">PRODUCT VISION →</span>
+          <span class="q-axis q-x">EXECUTION →</span>
+          <div class="q-quad q-tl">INNOVATORS</div>
+          <div class="q-quad q-tr">FRONTRUNNERS</div>
+          <div class="q-quad q-bl">SPECIALISTS</div>
+          <div class="q-quad q-br">ESTABLISHED</div>
 
           <div class="q-dot" style="left:24%;top:64%"><span class="q-lab">VendorCorp</span></div>
           <div class="q-dot" style="left:32%;top:46%"><span class="q-lab">LegacyOne</span></div>
