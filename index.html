@@ -28,21 +28,11 @@
 <meta name="twitter:image" content="https://www.dube.eu/assets/og-image.png"/>
 
 <!--
-  FONTS — self-hosted to remove the GDPR Google-Fonts liability.
-  Drop these files into assets/fonts/ before launch:
-    InterTight-500.woff2  InterTight-700.woff2  InterTight-800.woff2
-    JetBrainsMono-500.woff2  JetBrainsMono-700.woff2
-  Source: github.com/rsms/inter (Inter Tight)  |  github.com/JetBrains/JetBrainsMono
-  Both OFL-licensed. Until files are present, the page falls back to system fonts.
+  FONTS — no web fonts are loaded. The font-family stacks name Inter Tight and
+  JetBrains Mono first and fall back to the system stack, so pages render in
+  whatever is already on the visitor's device. Nothing is fetched from any
+  external host, and nothing is served from this origin either.
 -->
-<link rel="preload" as="font" href="assets/fonts/InterTight-800.woff2" type="font/woff2" crossorigin/>
-<style>
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/InterTight-500.woff2') format('woff2')}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/InterTight-700.woff2') format('woff2')}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/InterTight-800.woff2') format('woff2')}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/JetBrainsMono-500.woff2') format('woff2')}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/JetBrainsMono-700.woff2') format('woff2')}
-</style>
 <style>
 :root{
   /* Brand — DubeAI official */
@@ -681,14 +671,14 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
             <div>
               <h2>A new deal for <span class="a">enterprise software</span>.</h2>
               <div class="sU-grid">
-                <div class="u"><div class="n">01</div><h5>Lifetime Ownership</h5><p>Own the core, not a license.</p></div>
+                <div class="u"><div class="n">01</div><h5>Perpetual Licence</h5><p>Buy once. Run it forever.</p></div>
                 <div class="u"><div class="n">02</div><h5>Total Customisation</h5><p>Logic, auth, calcs, workflows.</p></div>
                 <div class="u"><div class="n">03</div><h5>No Developer Needed</h5><p>IT affinity + clear requirements.</p></div>
                 <div class="u f"><div class="n">04</div><h5>AI Workflow</h5><p>From idea to prod in prompts.</p></div>
                 <div class="u"><div class="n">05</div><h5>One-Prompt Docs</h5><p>Specs &amp; training, always current.</p></div>
                 <div class="u"><div class="n">06</div><h5>Zero Lock-In</h5><p>Your code, your hosting.</p></div>
                 <div class="u"><div class="n">07</div><h5>Expert Onboarding</h5><p>Included &amp; hands-on, same for everyone.</p></div>
-                <div class="u"><div class="n">08</div><h5>Community</h5><p>Free updates, Q&amp;A, knowledge.</p></div>
+                <div class="u"><div class="n">08</div><h5>Community</h5><p>Q&amp;A, knowledge, shared practice.</p></div>
               </div>
             </div>
             <div class="s-bottom"><span>DUBEAI · DUBE.EU</span><span>04 / 11</span></div>
@@ -941,7 +931,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border)}
     <div class="pillar ao">
       <div class="num">01 — OWN</div>
       <h3>Own<span class="a">.</span></h3>
-      <p>One-time purchase. Lifetime ownership of the core. <b>No renewals. No per-seat fees.</b> Deployed once, paid once.</p>
+      <p>One-time purchase. Perpetual licence to the core. <b>No renewals. No per-seat fees.</b> Deployed once, paid once.</p>
     </div>
     <div class="pillar ao">
       <div class="num">02 — SHAPE</div>

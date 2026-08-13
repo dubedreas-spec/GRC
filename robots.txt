@@ -1,0 +1,29 @@
+# www.dube.eu
+# Search engines are welcome. Automated bulk extraction is not — see
+# https://www.dube.eu/terms.html §3 (Terms of Use).
+
+User-agent: *
+Allow: /
+
+# --- Optional: block AI training/answer crawlers -------------------------
+# Uncomment to align robots.txt with the no-scraping clause in the Terms of
+# Use. Trade-off: these bots also feed AI answer engines, so blocking them
+# removes DubeAI from those results.
+#
+# User-agent: GPTBot
+# Disallow: /
+#
+# User-agent: ClaudeBot
+# Disallow: /
+#
+# User-agent: Google-Extended
+# Disallow: /
+#
+# User-agent: CCBot
+# Disallow: /
+#
+# User-agent: PerplexityBot
+# Disallow: /
+# -------------------------------------------------------------------------
+
+Sitemap: https://www.dube.eu/sitemap.xml

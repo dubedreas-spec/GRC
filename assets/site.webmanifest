@@ -1,8 +1,10 @@
 {
-  "name": "Dub(e)AI",
-  "short_name": "Dub(e)AI",
+  "name": "DubeAI",
+  "short_name": "DubeAI",
   "description": "GRC software you own — custom-built platform for Internal Controls, Risk, Audit and Compliance.",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#0F1724",
   "background_color": "#f5f7fa",

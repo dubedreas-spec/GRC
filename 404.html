@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" href="/assets/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/shield-32.png"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<link rel="manifest" href="/assets/site.webmanifest"/>
+<title>Page not found — DubeAI</title>
+<meta name="description" content="This page does not exist on www.dube.eu."/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="theme-color" content="#0F1724"/>
+
+<!-- FONTS — no web fonts are loaded; see index.html. -->
+<style>
+:root{
+  --cyan:#3BB7BF;--navy:#0F1724;
+  --bg:#f5f7fa;
+  --border:rgba(15,23,36,.10);--border-h:rgba(15,23,36,.22);
+  --surface:rgba(15,23,36,.04);
+  --text:#0F1724;--muted:rgba(15,23,36,.62);--dim:rgba(15,23,36,.42);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{font-family:'Inter Tight',Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+header{padding:26px 0;border-bottom:1px solid var(--border)}
+.inner{max-width:1320px;margin:0 auto;padding:0 40px;width:100%}
+.lockup img{height:34px;width:auto;display:block}
+
+main{flex:1;display:flex;align-items:center;padding:80px 0}
+.label{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:22px}
+.code{font-family:'JetBrains Mono',monospace;font-size:clamp(64px,11vw,132px);font-weight:700;line-height:1;letter-spacing:-.04em;color:var(--border-h);margin-bottom:10px}
+h1{font-weight:800;font-size:clamp(32px,4.6vw,58px);line-height:1.04;letter-spacing:-.035em;color:var(--navy);margin-bottom:18px}
+p.lead{font-size:16.5px;color:var(--muted);max-width:56ch;margin-bottom:34px}
+
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px}
+.cta{font-size:13px;font-weight:600;padding:12px 20px;background:var(--navy);color:#fff;border:1px solid var(--navy);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.cta:hover{background:var(--cyan);border-color:var(--cyan);color:var(--navy);transform:translateY(-1px)}
+.cta.ghost{background:transparent;color:var(--navy);border-color:var(--border-h)}
+.cta.ghost:hover{background:var(--surface);border-color:var(--navy);color:var(--navy);transform:none}
+
+.more{border-top:1px solid var(--border);padding-top:24px}
+.more-h{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;font-weight:700}
+.more-links{display:flex;flex-wrap:wrap;gap:28px;font-size:14px;color:var(--muted);font-weight:500}
+.more-links a:hover{color:var(--navy)}
+
+footer{border-top:1px solid var(--border);padding:22px 0;font-size:12.5px;color:var(--dim)}
+.foot-inner{max-width:1320px;margin:0 auto;padding:0 40px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+
+@media(max-width:720px){
+  .inner,.foot-inner{padding:0 22px}
+  main{padding:52px 0}
+  .actions{gap:10px}
+  .cta{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a class="lockup" href="/" aria-label="DubeAI — home">
+      <img src="/assets/lockup-horizontal.png" alt="DubeAI"/>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="inner">
+    <div class="label">Error</div>
+    <div class="code">404</div>
+    <h1>This page doesn&rsquo;t exist.</h1>
+    <p class="lead">The address you followed isn&rsquo;t on this site. It may have been moved, renamed, or simply mistyped. Nothing is wrong on your end.</p>
+
+    <div class="actions">
+      <a class="cta" href="/">Back to the home page
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="cta ghost" href="/#contact">Request a demo</a>
+    </div>
+
+    <div class="more">
+      <div class="more-h">Looking for</div>
+      <div class="more-links">
+        <a href="/imprint.html">Imprint</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>DubeAI &middot; dube.eu</span>
+    <span>GRC software you own.</span>
+  </div>
+</footer>
+
+</body>
+</html>

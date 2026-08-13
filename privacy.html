@@ -15,15 +15,7 @@
 <meta name="robots" content="index,follow"/>
 <meta name="theme-color" content="#0F1724"/>
 
-<!-- FONTS — see index.html for setup notes. -->
-<link rel="preload" as="font" href="assets/fonts/InterTight-800.woff2" type="font/woff2" crossorigin/>
-<style>
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/InterTight-500.woff2') format('woff2')}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/InterTight-700.woff2') format('woff2')}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/InterTight-800.woff2') format('woff2')}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/JetBrainsMono-500.woff2') format('woff2')}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/JetBrainsMono-700.woff2') format('woff2')}
-</style>
+<!-- FONTS — no web fonts are loaded; see index.html. -->
 <style>
 :root{
   --cyan:#3BB7BF;--cyan-dim:#2a8a90;--green:#8BC540;--green-dim:#6FA01F;
@@ -183,7 +175,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
   <header class="legal-head">
     <div class="label"><span class="num">§</span> Legal · Privacy</div>
     <h1 class="legal-h">Privacy Policy.</h1>
-    <div class="legal-meta">Last updated: 2026-05-17 · v1.0</div>
+    <div class="legal-meta">Last updated: 2026-08-13 · v1.1</div>
     <p class="lead">How personal data is processed on this website. Plain-language summary above, with full detail in the sections below. To exercise your rights, use the <a href="#dsar-form" style="color:var(--cyan-dim);border-bottom:1px solid currentColor">privacy request form</a> at the end of this page.</p>
   </header>
 
@@ -216,7 +208,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
     <article class="prose">
 
       <div class="callout">
-        <strong>This is not legal advice.</strong> The text below describes our actual processing. Legal precision was drafted with reference to the EU GDPR (Regulation 2016/679) and German BDSG. Final review by qualified counsel is recommended for production launch.
+        <strong>This is not legal advice.</strong> The text below describes our actual processing. Legal precision was drafted with reference to the EU GDPR (Regulation 2016/679) and German BDSG.
       </div>
 
       <h2 id="controller">1. Controller</h2>
@@ -228,27 +220,31 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
       <h2 id="overview">2. Overview of processing</h2>
       <p>We process personal data only where this is necessary to provide a functional website, deliver our content, and respond to enquiries — and only on a documented lawful basis:</p>
       <ul>
-        <li><strong>Art. 6 (1) (a) GDPR — consent</strong>, for the demo request form and the privacy request form (each gated by a consent checkbox).</li>
+        <li><strong>Art. 6 (1) (a) GDPR — consent</strong>, for the demo request form (gated by a consent checkbox).</li>
         <li><strong>Art. 6 (1) (b) GDPR — pre-contractual measures</strong>, where you contact us to evaluate a contract.</li>
         <li><strong>Art. 6 (1) (f) GDPR — legitimate interests</strong>, for the secure and stable operation of the website (server logs).</li>
-        <li><strong>Art. 6 (1) (c) GDPR — legal obligation</strong>, where retention is required by law (e.g. tax records).</li>
+        <li><strong>Art. 6 (1) (c) GDPR — legal obligation</strong>, for handling privacy requests under Arts. 12–22 GDPR, and where retention is required by law (e.g. tax records).</li>
       </ul>
 
       <h2 id="hosting">3. Website hosting &amp; server logs</h2>
-      <p>This website is hosted by an infrastructure provider with data centres in the European Union.</p>
-      <p>When you access this website, our hosting provider automatically collects technical access data in server log files: anonymised or shortened IP address, date and time of access, requested URL, HTTP status code, referring URL, user-agent string. These logs are processed solely to ensure operational security and detect abuse, on the basis of our legitimate interests under Art. 6 (1) (f) GDPR. Logs are retained for a maximum of <strong>14 days</strong> and then deleted.</p>
+      <p>This website is hosted on <strong>GitHub Pages</strong>, a service of <strong>GitHub, Inc.</strong>, 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, and delivered through a global content delivery network. Your request is normally answered by an edge location near you, but the provider is established in the United States — see <a href="#third-country">§9</a>.</p>
+      <p>When you access this website, GitHub automatically processes technical access data: your IP address, date and time of access, requested URL, HTTP status code, referring URL, and user-agent string. This serves the secure and stable operation of the website and rests on our legitimate interests under Art. 6 (1) (f) GDPR.</p>
+      <p>We have <strong>no access to these server logs</strong> and no control over how long GitHub keeps them. We therefore cannot state a retention period of our own for this data, and we cannot shorten or anonymise the IP addresses it contains. GitHub&rsquo;s own privacy statement governs that processing.</p>
 
       <h2 id="fonts">4. Fonts</h2>
-      <p>Web fonts (Inter Tight, JetBrains Mono) are <strong>served locally from our own infrastructure</strong>. No font data is transmitted to Google Fonts, Adobe Fonts, or any other third-party provider when you visit this site.</p>
+      <p>This website loads <strong>no web fonts at all</strong>. Pages are rendered in fonts already present on your device. Nothing is requested from Google Fonts, Adobe Fonts or any other third-party provider, and no font file is downloaded from this website either.</p>
 
       <h2 id="contact-form">5. Demo request form</h2>
-      <p>When you submit the demo request form on the <a href="index.html#contact">home page</a>, the following data is processed: name, work email address, company, optional message, the explicit consent flag, and a timestamp.</p>
+      <p>When you submit the demo request form on the <a href="index.html#contact">home page</a>, the following data is processed: name, work email address, company, your message (a mandatory field, minimum 10 characters), the explicit consent flag, and a timestamp.</p>
+      <p>The submission is sent from your browser directly to Formspree. This unavoidably also transmits your <strong>IP address, user-agent string and referring URL</strong> to Formspree in the USA.</p>
       <p>The form is operated through <strong>Formspree, Inc.</strong> (Boston, MA, USA) as our processor. Form submissions are transmitted to Formspree, which then forwards them to our internal mailbox. A data processing agreement under Art. 28 GDPR is in place. The transfer to the USA is safeguarded by EU Standard Contractual Clauses (Art. 46 (2) (c) GDPR).</p>
       <p><strong>Lawful basis:</strong> your consent under Art. 6 (1) (a) GDPR, and — where the request concerns the evaluation of a contract — Art. 6 (1) (b) GDPR. <strong>Retention:</strong> request data is retained for up to <strong>12 months</strong> after the request is closed, then deleted, unless a contract is initiated. You may withdraw your consent at any time via the <a href="#dsar-form">privacy request form</a>; withdrawal does not affect the lawfulness of prior processing.</p>
 
       <h2 id="privacy-request-form">6. Privacy request form</h2>
-      <p>The <a href="#dsar-form">privacy request form</a> at the end of this page lets you exercise your rights under Arts. 15–22 GDPR. It collects: the request category, your name, your email, your message, the consent flag, and a timestamp.</p>
-      <p>Processing path is the same as for the demo form: <strong>Formspree, Inc.</strong> (USA) as processor, SCCs in place, retention limited to what is necessary to handle the request and to meet our accountability obligations under Art. 5 (2) GDPR. We may ask for proof of identity before processing your request, per Art. 12 (6) GDPR.</p>
+      <p>The <a href="#dsar-form">privacy request form</a> at the end of this page lets you exercise your rights under Arts. 15–22 GDPR. It collects: the request category, your name, your email, your message, an acknowledgement flag, and a timestamp.</p>
+      <p><strong>Lawful basis:</strong> handling your request is a legal obligation under Art. 6 (1) (c) GDPR in conjunction with Arts. 12–22 GDPR. It does <em>not</em> depend on your consent, and we do not make it conditional on one.</p>
+      <p>The processing path is the same as for the demo form: <strong>Formspree, Inc.</strong> (USA) as processor, SCCs in place, and the same transmission of IP address, user-agent and referring URL described in <a href="#contact-form">§5</a>. Retention is limited to what is necessary to handle the request and to meet our accountability obligations under Art. 5 (2) GDPR. We may ask for proof of identity before acting on your request, per Art. 12 (6) GDPR.</p>
+      <p>If you prefer not to use the form, send your request by email to <code>ai4grc@dube.eu</code> instead — that route does not involve Formspree.</p>
 
       <h2 id="data-categories">7. Categories of data, lawful bases, and retention</h2>
       <table>
@@ -258,20 +254,20 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
         <tbody>
           <tr>
             <td>Website operation &amp; security</td>
-            <td>IP (shortened), user-agent, timestamps, requested URL</td>
+            <td>IP address, user-agent, timestamps, requested URL, referring URL</td>
             <td>Art. 6 (1) (f)</td>
-            <td>≤ 14 days</td>
+            <td>Set by GitHub — no access on our side (§3)</td>
           </tr>
           <tr>
             <td>Demo request handling</td>
-            <td>Name, work email, company, message, consent flag</td>
+            <td>Name, work email, company, message, consent flag, plus IP &amp; user-agent of the submission</td>
             <td>Art. 6 (1) (a) / (b)</td>
             <td>≤ 12 months after closure</td>
           </tr>
           <tr>
             <td>Privacy request handling</td>
-            <td>Subject, name, email, message, consent flag</td>
-            <td>Art. 6 (1) (a), (c)</td>
+            <td>Subject, name, email, message, plus IP &amp; user-agent of the submission</td>
+            <td>Art. 6 (1) (c)</td>
             <td>3 years (accountability)</td>
           </tr>
         </tbody>
@@ -280,14 +276,19 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
       <h2 id="recipients">8. Recipients &amp; processors</h2>
       <p>We do not sell personal data. We share data only with processors who act on our documented instructions under Art. 28 GDPR:</p>
       <ul>
-        <li><strong>EU-based hosting provider</strong> — website hosting &amp; log infrastructure (data centres in the EU).</li>
+        <li><strong>GitHub, Inc.</strong>, San Francisco, CA, USA — hosting and delivery of this website via GitHub Pages, including the server logs described in §3.</li>
         <li><strong>Formspree, Inc.</strong>, Boston, MA, USA — form submission processing (demo &amp; privacy request forms). SCCs in place.</li>
         <li><strong>EU-based email provider</strong> — receipt and storage of submitted enquiries.</li>
       </ul>
 
       <h2 id="third-country">9. Third-country transfers</h2>
-      <p>Data submitted via the demo or privacy request form is transferred to the United States, where our form processor (Formspree, Inc.) is established. Transfers are safeguarded under EU Standard Contractual Clauses pursuant to Art. 46 (2) (c) GDPR. We have assessed the legal regime of the recipient country (Schrems II transfer impact assessment) and apply supplementary measures as appropriate (TLS in transit, access controls at the recipient).</p>
-      <p>You acknowledge — by ticking the consent checkbox — that this third-country transfer takes place.</p>
+      <p>Two processors established in the United States are involved:</p>
+      <ul>
+        <li><strong>GitHub, Inc.</strong> — hosting and delivery of every page of this website. Each page view transmits the access data described in §3, including your full IP address. This applies whether or not you use a form.</li>
+        <li><strong>Formspree, Inc.</strong> — processing of the demo and privacy request forms, covering the form content and the metadata described in §5.</li>
+      </ul>
+      <p>Transfers are safeguarded under EU Standard Contractual Clauses pursuant to Art. 46 (2) (c) GDPR. We have assessed the legal regime of the recipient country (Schrems II transfer impact assessment) and apply supplementary measures as appropriate (TLS in transit, access controls at the recipient).</p>
+      <p>When you submit the demo form, you additionally acknowledge this transfer by ticking the consent checkbox. The transfer to our host cannot be avoided that way — it is inherent in retrieving any page of this website.</p>
 
       <h2 id="retention">10. Retention periods</h2>
       <p>We retain personal data only for as long as necessary for the purposes set out in §7, or for as long as required by law (in particular German commercial and tax retention obligations, generally 6 to 10 years for accounting records). After the retention period expires, data is deleted or — where applicable — restricted from further processing.</p>
@@ -307,7 +308,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
         <li><strong>Right to withdraw consent</strong> (Art. 7 (3)) — at any time, with effect for the future.</li>
         <li><strong>Right to lodge a complaint</strong> with a supervisory authority (Art. 77) — see §13.</li>
       </ul>
-      <p>To exercise any of these rights, please use the <a href="#dsar-form">privacy request form</a> below. We respond without undue delay and in any event within one month of receipt (Art. 12 (3) GDPR).</p>
+      <p>To exercise any of these rights, use the <a href="#dsar-form">privacy request form</a> below or simply email <code>ai4grc@dube.eu</code> — both are equally valid, and the email route does not involve any third-country transfer. We respond without undue delay and in any event within one month of receipt (Art. 12 (3) GDPR).</p>
 
       <h2 id="supervisory-authority">13. Supervisory authority</h2>
       <p>The competent supervisory authority for the controller is:</p>
@@ -324,7 +325,7 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
       <p>We may update this Privacy Policy from time to time to reflect changes in our processing or in applicable law. The "Last updated" date at the top of this page indicates the current version. Material changes will be flagged where they affect existing data subjects.</p>
 
       <h2 id="dsar-form">16. Submit a privacy request</h2>
-      <p>Use this form to exercise any of your rights under §12, to withdraw consent, or to ask a privacy-related question. All submissions are routed through Formspree (see §6) and reach our designated privacy mailbox.</p>
+      <p>Use this form to exercise any of your rights under §12, to withdraw consent, or to ask a privacy-related question. Submissions are routed through Formspree (see §6) and reach our privacy mailbox. If you would rather not use a US processor, email <code>ai4grc@dube.eu</code> directly — we treat that as an equally valid request.</p>
 
       <div class="callout callout-warn">
         <strong>Identity verification.</strong> To prevent unauthorised disclosure, we may ask you to verify your identity before we act on a request concerning personal data we hold about you (Art. 12 (6) GDPR). We will explain what is needed in our first reply.
@@ -362,8 +363,8 @@ footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--b
           </div>
           <div class="fld fld-consent">
             <label class="consent" for="df-consent">
-              <input id="df-consent" type="checkbox" name="consent" value="yes" required/>
-              <span>I consent to DubeAI processing the data above to handle this privacy request, and acknowledge the transfer to Formspree (USA) under SCCs. See <a href="#privacy-request-form">§6</a>.</span>
+              <input id="df-consent" type="checkbox" name="acknowledged" value="yes"/>
+              <span>I acknowledge that submitting this form transfers the data above to Formspree (USA) under SCCs. Handling your request itself does not require your consent — see <a href="#privacy-request-form">§6</a>. To avoid the transfer entirely, email <code>ai4grc@dube.eu</code> instead.</span>
             </label>
           </div>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"/>
