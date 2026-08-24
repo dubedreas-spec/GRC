@@ -1,0 +1,25 @@
+# DubeAI
+
+> DubeAI is a self-hosted GRC (Governance, Risk & Compliance) platform delivered with full source code. Customers deploy it in their own cloud (AWS, Azure, GCP, OpenShift, on-premises or air-gapped) and operate it with their own IT team. Perpetual licence instead of SaaS subscription — no vendor lock-in, data never leaves the customer's environment.
+
+Not SaaS. Not consulting. A GRC platform built with AI.
+
+## Modules
+
+Access Control, Risk Management, Controls Management, Audit Management, Compliance, ISMS, Policy Management, Third-Party Risk, Business Continuity, Incident Management, Tax Compliance, AI Governance, Whistleblower.
+
+Typical use: internal control systems (ICS/IKS), SOX 404 control testing, ISO 27001 ISMS, DORA, NIS2, MaRisk, EU AI Act governance.
+
+## Pages
+
+- [Home](https://www.dube.eu/): product overview, ownership model, TCO comparison, demo request
+- [Privacy Policy](https://www.dube.eu/privacy.html)
+- [Imprint](https://www.dube.eu/imprint.html)
+- [Terms of Use](https://www.dube.eu/terms.html)
+- [Terms of Service](https://www.dube.eu/terms-of-service.html)
+
+## Contact
+
+- Email: ai4grc@dube.eu
+- LinkedIn: https://www.linkedin.com/company/dubeai
+- Platform login (customers): https://ai4grc.dube.eu
