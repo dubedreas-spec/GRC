@@ -18,6 +18,14 @@ Typical use: internal control systems (ICS/IKS), SOX 404 control testing, ISO 27
 - [Terms of Use](https://www.dube.eu/terms.html)
 - [Terms of Service](https://www.dube.eu/terms-of-service.html)
 
+## German version (Deutsche Fassung)
+
+- [Startseite](https://www.dube.eu/de/index.html)
+- [Datenschutzerklärung](https://www.dube.eu/de/privacy.html)
+- [Impressum](https://www.dube.eu/de/imprint.html)
+- [Nutzungsbedingungen](https://www.dube.eu/de/terms.html)
+- [Vertragsbedingungen](https://www.dube.eu/de/terms-of-service.html)
+
 ## Contact
 
 - Email: ai4grc@dube.eu

@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" href="../assets/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/shield-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icon-192.png"/>
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png"/>
+<link rel="manifest" href="../assets/site.webmanifest"/>
+<title>Datenschutzerklärung — DubeAI</title>
+<meta name="description" content="Datenschutzerklärung für die DubeAI-Website. Informationen zu Verarbeitung, Rechtsgrundlagen, Empfängern, Speicherdauer und Betroffenenrechten nach der DSGVO."/>
+<meta name="application-name" content="DubeAI"/>
+<link rel="canonical" href="https://www.dube.eu/de/privacy.html"/>
+<link rel="alternate" hreflang="en" href="https://www.dube.eu/privacy.html"/>
+<link rel="alternate" hreflang="de" href="https://www.dube.eu/de/privacy.html"/>
+<link rel="alternate" hreflang="x-default" href="https://www.dube.eu/privacy.html"/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#0F1724"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="DubeAI"/>
+<meta property="og:url" content="https://www.dube.eu/de/privacy.html"/>
+<meta property="og:title" content="Datenschutzerklärung — DubeAI"/>
+<meta property="og:description" content="Datenschutzerklärung für die DubeAI-Website. Informationen zu Verarbeitung, Rechtsgrundlagen, Empfängern, Speicherdauer und Betroffenenrechten nach der DSGVO."/>
+<meta property="og:image" content="https://www.dube.eu/assets/og-image.jpg"/>
+<meta property="og:locale" content="de_DE"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Datenschutzerklärung — DubeAI"/>
+<meta name="twitter:image" content="https://www.dube.eu/assets/og-image.jpg"/>
+
+<!-- FONTS — no web fonts are loaded; see index.html. -->
+<style>
+:root{
+  --cyan:#3BB7BF;--cyan-dim:#2a8a90;--green:#8BC540;--green-dim:#6FA01F;
+  --navy:#0F1724;--navy-deep:#070b14;
+  --bg:#f5f7fa;--bg-2:#ffffff;--bg-3:#eceff4;
+  --surface:rgba(15,23,36,.04);--surface-h:rgba(15,23,36,.07);
+  --border:rgba(15,23,36,.10);--border-h:rgba(15,23,36,.22);
+  --text:#0F1724;--muted:rgba(15,23,36,.62);--dim:rgba(15,23,36,.42);--faint:rgba(15,23,36,.22);
+  --red:#e03131;--orange:#e8590c;--violet:#7048e8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:'Inter Tight',Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+.lockup{display:inline-flex;align-items:center}
+.lockup img{height:38px;width:auto;display:block}
+.lockup.sm img{height:30px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;background:rgba(245,247,250,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nv-inner{max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nv-links{display:flex;gap:36px;font-size:13.5px;color:var(--muted);font-weight:500}
+.nv-links a:hover{color:var(--navy)}
+.nv-cta{font-size:13px;font-weight:600;padding:10px 18px;background:var(--navy);color:#fff;transition:all .2s;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--navy)}
+.nv-cta:hover{background:var(--cyan);border-color:var(--cyan);color:var(--navy);transform:translateY(-1px)}
+.nv-actions{display:flex;align-items:center;gap:10px}
+.nv-login{font-size:13px;font-weight:600;padding:10px 14px;color:var(--navy);border:1px solid var(--border-h);transition:all .2s;display:inline-flex;align-items:center;gap:7px;background:transparent}
+.nv-login:hover{border-color:var(--navy);background:var(--surface)}
+@media(max-width:980px){.nv-login{padding:9px 11px}.nv-login .nv-login-label{display:none}.nv-login svg{width:16px;height:16px}}
+
+.legal-wrap{max-width:1180px;margin:0 auto;padding:140px 40px 80px}
+.legal-head{margin-bottom:48px;max-width:760px}
+.label{display:inline-flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.label::before{content:"[ ";color:var(--faint);font-weight:400}
+.label::after{content:" ]";color:var(--faint);font-weight:400}
+.label .num{color:var(--faint);font-weight:500}
+h1.legal-h{font-family:'Inter Tight',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);line-height:1.02;letter-spacing:-.035em;color:var(--navy);margin-bottom:16px}
+.legal-meta{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:640px;margin-top:18px}
+
+.legal-body{display:grid;grid-template-columns:240px 1fr;gap:64px;align-items:start}
+aside.toc{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 120px);overflow-y:auto;padding-right:8px}
+.toc-h{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;font-weight:700}
+.toc-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px}
+.toc-list a{color:var(--muted);border-left:2px solid var(--border);padding:4px 0 4px 12px;transition:color .15s,border-color .15s;display:block;line-height:1.4}
+.toc-list a:hover,.toc-list a.active{color:var(--navy);border-left-color:var(--cyan)}
+
+.prose{font-family:'Inter Tight',sans-serif;color:var(--text);max-width:760px}
+.prose>*+*{margin-top:1.1em}
+.prose h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-top:2.6em;padding-top:1.3em;border-top:1px solid var(--border);scroll-margin-top:96px}
+.prose h2:first-child{border-top:none;padding-top:0;margin-top:0}
+.prose h3{font-size:17px;font-weight:700;color:var(--navy);margin-top:1.6em;scroll-margin-top:96px}
+.prose p,.prose li{font-size:16.5px;line-height:1.7;color:var(--text)}
+.prose a{color:var(--cyan-dim);border-bottom:1px solid currentColor;transition:color .15s}
+.prose a:hover{color:var(--navy)}
+.prose ul,.prose ol{padding-left:1.4em;margin-top:.6em}
+.prose ul>li+li,.prose ol>li+li{margin-top:.4em}
+.prose strong{font-weight:700;color:var(--navy)}
+.prose code{font-family:'JetBrains Mono',monospace;font-size:14px;background:var(--surface);padding:1px 6px}
+
+.prose table{width:100%;border-collapse:collapse;font-size:14.5px;border:1px solid var(--border);margin:1.4em 0}
+.prose th,.prose td{padding:10px 14px;border:1px solid var(--border);text-align:left;vertical-align:top;line-height:1.5}
+.prose th{background:var(--surface);font-weight:600;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+
+.callout{margin:1.4em 0;padding:14px 16px;border-left:3px solid var(--cyan);background:var(--surface);font-size:14.5px;line-height:1.55;color:var(--muted)}
+.callout strong{color:var(--navy)}
+.callout-warn{border-left-color:var(--orange);background:rgba(232,89,12,.05)}
+
+/* ── DSAR form (mirror of index.html .req-form) ── */
+.dsar-form{max-width:640px;margin:48px 0 0;background:#fff;border:1px solid var(--border);padding:28px;box-shadow:0 24px 60px -20px rgba(15,23,36,.14)}
+.dsar-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dsar-form label{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.dsar-form .fld{margin-bottom:16px}
+.dsar-form input,.dsar-form select,.dsar-form textarea{width:100%;font-family:'Inter Tight',sans-serif;font-size:14.5px;font-weight:500;color:var(--navy);background:#fff;border:1px solid var(--border);padding:12px 14px;transition:border-color .2s;outline:none}
+.dsar-form select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%230F1724' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.dsar-form input:focus,.dsar-form select:focus,.dsar-form textarea:focus{border-color:var(--navy)}
+.dsar-form textarea{resize:vertical;min-height:110px;line-height:1.5}
+.dsar-form .submit{width:100%;font-size:14.5px;font-weight:600;padding:15px 24px;background:var(--navy);color:#fff;border:1px solid var(--navy);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Inter Tight',sans-serif}
+.dsar-form .submit:hover{background:var(--cyan);border-color:var(--cyan);color:var(--navy);box-shadow:0 10px 28px rgba(59,183,191,.35)}
+.dsar-form .submit:disabled{opacity:.5;cursor:wait}
+.dsar-form .note{display:block;margin-top:12px;font-size:12px;color:var(--dim);text-align:center}
+.dsar-form .ok{display:none;text-align:center;padding:30px 10px}
+.dsar-form.sent .ok{display:block}
+.dsar-form.sent .body{display:none}
+.dsar-form .ok-icon{width:48px;height:48px;border:1.5px solid var(--green);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--green);margin-bottom:18px}
+.dsar-form .ok h4{font-family:'Inter Tight',sans-serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:-.015em}
+.dsar-form .ok p{font-size:14px;color:var(--muted);max-width:none;margin:0}
+.dsar-form .fld-consent{margin-bottom:18px}
+.dsar-form .consent{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-family:'Inter Tight',sans-serif;font-size:13px;line-height:1.5;color:var(--muted);font-weight:500;letter-spacing:0;text-transform:none}
+.dsar-form .consent input[type=checkbox]{flex:none;margin-top:3px;width:16px;height:16px;accent-color:var(--cyan);cursor:pointer}
+
+footer{padding:48px 0 36px;border-top:1px solid var(--border);background:var(--bg)}
+.ft{max-width:1320px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.ftl{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--dim)}
+.ftl .lockup{opacity:.85}
+.ftr{display:flex;gap:28px}
+.ftr a{font-size:13px;color:var(--muted);transition:color .2s}
+.ftr a:hover{color:var(--text)}
+.ftr a[aria-current=page]{color:var(--text);cursor:default;pointer-events:none}
+
+@media(max-width:980px){
+  .legal-body{grid-template-columns:1fr;gap:24px}
+  aside.toc{position:static;max-height:none;overflow:visible;padding:0}
+  aside.toc details{border:1px solid var(--border);padding:0;background:var(--surface)}
+  aside.toc summary{cursor:pointer;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--navy)}
+  aside.toc details[open] summary{border-bottom:1px solid var(--border)}
+  aside.toc .toc-h{display:none}
+  aside.toc .toc-list{padding:14px 16px}
+  .dsar-form .row{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .nv-inner,.ft{padding-left:20px;padding-right:20px}
+  .nv-links{display:none}
+  nav{padding:12px 0}
+  .legal-wrap{padding:110px 20px 60px}
+  .dsar-form{padding:22px}
+  .ft{flex-direction:column;align-items:flex-start}
+  .lockup img{height:28px}
+  .lockup.sm img{height:24px}
+  .nv-cta{font-size:12px;padding:8px 12px;gap:5px}
+  .nv-cta svg{width:11px;height:11px}
+}
+@media(max-width:380px){
+  .nv-cta{font-size:11px;padding:7px 10px}
+  .nv-cta svg{display:none}
+  .lockup img{height:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nv-inner">
+    <a href="index.html#top" class="lockup" aria-label="DubeAI Startseite">
+      <img src="../assets/lockup-horizontal.png" alt="DubeAI" width="608" height="152"/>
+    </a>
+    <div class="nv-links">
+      <a href="index.html#problem">Die Falle</a>
+      <a href="index.html#pillars">Ansatz</a>
+      <a href="index.html#quadrant">Anbieterbewertung</a>
+      <a href="index.html#contact">Demo anfragen</a>
+      <a href="../privacy.html" hreflang="en" lang="en">EN</a>
+    </div>
+    <div class="nv-actions">
+      <a href="https://ai4grc.dube.eu" class="nv-login" rel="noopener" aria-label="An der GRC-Plattform anmelden" title="An der GRC-Plattform anmelden">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+        <span class="nv-login-label">An der GRC-Plattform anmelden</span>
+      </a>
+      <a href="index.html#contact" class="nv-cta">Demo anfragen
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+  <header class="legal-head">
+    <div class="label"><span class="num">§</span> Rechtliches · Datenschutz</div>
+    <h1 class="legal-h">Datenschutzerklärung.</h1>
+    <div class="legal-meta">Stand: 2026-08-13 · v1.1</div>
+    <div class="callout">
+      Diese deutsche Fassung ist eine Übersetzung. Bei Abweichungen gilt die englische Originalfassung: <a href="../privacy.html" style="color:var(--cyan-dim);border-bottom:1px solid currentColor">Privacy Policy (English)</a>.
+    </div>
+    <p class="lead">Wie personenbezogene Daten auf dieser Website verarbeitet werden. Oben eine verständliche Zusammenfassung, alle Details in den Abschnitten darunter. Zur Ausübung Ihrer Rechte nutzen Sie das <a href="#dsar-form" style="color:var(--cyan-dim);border-bottom:1px solid currentColor">Datenschutz-Anfrageformular</a> am Ende dieser Seite.</p>
+  </header>
+
+  <div class="legal-body">
+    <aside class="toc" aria-label="Inhaltsverzeichnis">
+      <details>
+        <summary>Inhalt</summary>
+        <div class="toc-h">Inhalt</div>
+        <ol class="toc-list" id="tocList">
+          <li><a href="#controller">1. Verantwortlicher</a></li>
+          <li><a href="#overview">2. Übersicht</a></li>
+          <li><a href="#hosting">3. Hosting &amp; Server-Logs</a></li>
+          <li><a href="#fonts">4. Schriftarten</a></li>
+          <li><a href="#contact-form">5. Demo-Anfrageformular</a></li>
+          <li><a href="#privacy-request-form">6. Datenschutz-Anfrageformular</a></li>
+          <li><a href="#data-categories">7. Kategorien &amp; Rechtsgrundlagen</a></li>
+          <li><a href="#recipients">8. Empfänger &amp; Auftragsverarbeiter</a></li>
+          <li><a href="#third-country">9. Drittlandübermittlungen</a></li>
+          <li><a href="#retention">10. Speicherdauer</a></li>
+          <li><a href="#cookies">11. Cookies &amp; Tracking</a></li>
+          <li><a href="#your-rights">12. Ihre Rechte</a></li>
+          <li><a href="#supervisory-authority">13. Aufsichtsbehörde</a></li>
+          <li><a href="#automated-decisions">14. Automatisierte Entscheidungen</a></li>
+          <li><a href="#changes">15. Änderungen</a></li>
+          <li><a href="#dsar-form">16. Anfrage stellen</a></li>
+        </ol>
+      </details>
+    </aside>
+
+    <article class="prose">
+
+      <div class="callout">
+        <strong>Dies ist keine Rechtsberatung.</strong> Der folgende Text beschreibt unsere tatsächliche Verarbeitung. Die rechtlichen Formulierungen orientieren sich an der EU-DSGVO (Verordnung 2016/679) und dem deutschen BDSG.
+      </div>
+
+      <h2 id="controller">1. Verantwortlicher</h2>
+      <p>Verantwortlicher für die Verarbeitung personenbezogener Daten auf dieser Website im Sinne von Art. 4 Nr. 7 DSGVO ist:</p>
+      <p><strong>DubeAI</strong>, Bad Homburg vor der Höhe, Deutschland. E-Mail (nur als Klartext angegeben — für Nachrichten nutzen Sie bitte das Kontaktformular): <code>ai4grc@dube.eu</code>.</p>
+      <p>Vollständige Anbieterangaben: siehe <a href="imprint.html">Impressum</a>.</p>
+      <p>Ein Datenschutzbeauftragter ist nicht benannt, da der Verantwortliche weder nach Art. 37 DSGVO noch nach § 38 BDSG zur Benennung verpflichtet ist.</p>
+
+      <h2 id="overview">2. Übersicht der Verarbeitung</h2>
+      <p>Wir verarbeiten personenbezogene Daten nur, soweit dies für eine funktionsfähige Website, die Bereitstellung unserer Inhalte und die Beantwortung von Anfragen erforderlich ist — und nur auf einer dokumentierten Rechtsgrundlage:</p>
+      <ul>
+        <li><strong>Art. 6 Abs. 1 lit. a DSGVO — Einwilligung</strong>, für das Demo-Anfrageformular (abgesichert durch eine Einwilligungs-Checkbox).</li>
+        <li><strong>Art. 6 Abs. 1 lit. b DSGVO — vorvertragliche Maßnahmen</strong>, wenn Sie uns im Hinblick auf einen möglichen Vertrag kontaktieren.</li>
+        <li><strong>Art. 6 Abs. 1 lit. f DSGVO — berechtigte Interessen</strong>, für den sicheren und stabilen Betrieb der Website (Server-Logs).</li>
+        <li><strong>Art. 6 Abs. 1 lit. c DSGVO — rechtliche Verpflichtung</strong>, für die Bearbeitung von Datenschutzanfragen nach Art. 12–22 DSGVO sowie dort, wo gesetzliche Aufbewahrungspflichten bestehen (z.&nbsp;B. Steuerunterlagen).</li>
+      </ul>
+
+      <h2 id="hosting">3. Website-Hosting &amp; Server-Logs</h2>
+      <p>Diese Website wird auf <strong>GitHub Pages</strong> gehostet, einem Dienst der <strong>GitHub, Inc.</strong>, 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, und über ein globales Content Delivery Network ausgeliefert. Ihre Anfrage wird in der Regel von einem Edge-Standort in Ihrer Nähe beantwortet, der Anbieter ist jedoch in den USA ansässig — siehe <a href="#third-country">§ 9</a>.</p>
+      <p>Beim Aufruf dieser Website verarbeitet GitHub automatisch technische Zugriffsdaten: Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene URL, den HTTP-Statuscode, die verweisende URL und den User-Agent-String. Dies dient dem sicheren und stabilen Betrieb der Website und stützt sich auf unsere berechtigten Interessen nach Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <p>Wir haben <strong>keinen Zugriff auf diese Server-Logs</strong> und keinen Einfluss darauf, wie lange GitHub sie aufbewahrt. Wir können daher für diese Daten keine eigene Speicherdauer angeben und die darin enthaltenen IP-Adressen weder kürzen noch anonymisieren. Für diese Verarbeitung gilt die eigene Datenschutzerklärung von GitHub.</p>
+
+      <h2 id="fonts">4. Schriftarten</h2>
+      <p>Diese Website lädt <strong>keinerlei Web-Fonts</strong>. Die Seiten werden in Schriftarten dargestellt, die bereits auf Ihrem Gerät vorhanden sind. Es wird nichts von Google Fonts, Adobe Fonts oder anderen Drittanbietern angefordert, und auch von dieser Website selbst wird keine Schriftdatei heruntergeladen.</p>
+
+      <h2 id="contact-form">5. Demo-Anfrageformular</h2>
+      <p>Wenn Sie das Demo-Anfrageformular auf der <a href="index.html#contact">Startseite</a> absenden, werden folgende Daten verarbeitet: Name, geschäftliche E-Mail-Adresse, Unternehmen, Ihre Nachricht (Pflichtfeld, mindestens 10 Zeichen), das Einwilligungs-Kennzeichen und ein Zeitstempel.</p>
+      <p>Die Übermittlung erfolgt aus Ihrem Browser direkt an Formspree. Dabei werden zwangsläufig auch Ihre <strong>IP-Adresse, Ihr User-Agent-String und die verweisende URL</strong> an Formspree in die USA übertragen.</p>
+      <p>Das Formular wird über <strong>Formspree, Inc.</strong> (Boston, MA, USA) als unseren Auftragsverarbeiter betrieben. Formulareinsendungen werden an Formspree übermittelt und von dort an unser internes Postfach weitergeleitet. Ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO besteht. Die Übermittlung in die USA ist durch EU-Standardvertragsklauseln abgesichert (Art. 46 Abs. 2 lit. c DSGVO).</p>
+      <p><strong>Rechtsgrundlage:</strong> Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO sowie — soweit die Anfrage die Anbahnung eines Vertrags betrifft — Art. 6 Abs. 1 lit. b DSGVO. <strong>Speicherdauer:</strong> Anfragedaten werden bis zu <strong>12 Monate</strong> nach Abschluss der Anfrage aufbewahrt und dann gelöscht, sofern kein Vertrag zustande kommt. Sie können Ihre Einwilligung jederzeit über das <a href="#dsar-form">Datenschutz-Anfrageformular</a> widerrufen; der Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
+
+      <h2 id="privacy-request-form">6. Datenschutz-Anfrageformular</h2>
+      <p>Über das <a href="#dsar-form">Datenschutz-Anfrageformular</a> am Ende dieser Seite können Sie Ihre Rechte nach Art. 15–22 DSGVO ausüben. Erhoben werden: die Anfragekategorie, Ihr Name, Ihre E-Mail-Adresse, Ihre Nachricht, ein Bestätigungs-Kennzeichen und ein Zeitstempel.</p>
+      <p><strong>Rechtsgrundlage:</strong> Die Bearbeitung Ihrer Anfrage ist eine rechtliche Verpflichtung nach Art. 6 Abs. 1 lit. c DSGVO in Verbindung mit Art. 12–22 DSGVO. Sie hängt <em>nicht</em> von Ihrer Einwilligung ab, und wir machen sie auch nicht davon abhängig.</p>
+      <p>Der Verarbeitungsweg ist derselbe wie beim Demo-Formular: <strong>Formspree, Inc.</strong> (USA) als Auftragsverarbeiter, Standardvertragsklauseln bestehen, und es gilt dieselbe in <a href="#contact-form">§ 5</a> beschriebene Übertragung von IP-Adresse, User-Agent und verweisender URL. Die Speicherung ist auf das beschränkt, was für die Bearbeitung der Anfrage und die Erfüllung unserer Rechenschaftspflichten nach Art. 5 Abs. 2 DSGVO erforderlich ist. Vor der Bearbeitung Ihrer Anfrage können wir gemäß Art. 12 Abs. 6 DSGVO einen Identitätsnachweis verlangen.</p>
+      <p>Wenn Sie das Formular nicht nutzen möchten, senden Sie Ihre Anfrage stattdessen per E-Mail an <code>ai4grc@dube.eu</code> — dieser Weg läuft nicht über Formspree.</p>
+
+      <h2 id="data-categories">7. Datenkategorien, Rechtsgrundlagen und Speicherdauer</h2>
+      <table>
+        <thead>
+          <tr><th>Zweck</th><th>Daten</th><th>Rechtsgrundlage</th><th>Speicherdauer</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Website-Betrieb &amp; Sicherheit</td>
+            <td>IP-Adresse, User-Agent, Zeitstempel, aufgerufene URL, verweisende URL</td>
+            <td>Art. 6 Abs. 1 lit. f</td>
+            <td>Von GitHub festgelegt — kein Zugriff unsererseits (§ 3)</td>
+          </tr>
+          <tr>
+            <td>Bearbeitung von Demo-Anfragen</td>
+            <td>Name, geschäftliche E-Mail, Unternehmen, Nachricht, Einwilligungs-Kennzeichen, zusätzlich IP &amp; User-Agent der Einsendung</td>
+            <td>Art. 6 Abs. 1 lit. a / b</td>
+            <td>≤ 12 Monate nach Abschluss</td>
+          </tr>
+          <tr>
+            <td>Bearbeitung von Datenschutzanfragen</td>
+            <td>Betreff, Name, E-Mail, Nachricht, zusätzlich IP &amp; User-Agent der Einsendung</td>
+            <td>Art. 6 Abs. 1 lit. c</td>
+            <td>3 Jahre (Rechenschaftspflicht)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="recipients">8. Empfänger &amp; Auftragsverarbeiter</h2>
+      <p>Wir verkaufen keine personenbezogenen Daten. Wir geben Daten nur an Auftragsverarbeiter weiter, die auf unsere dokumentierte Weisung nach Art. 28 DSGVO handeln:</p>
+      <ul>
+        <li><strong>GitHub, Inc.</strong>, San Francisco, CA, USA — Hosting und Auslieferung dieser Website über GitHub Pages, einschließlich der in § 3 beschriebenen Server-Logs.</li>
+        <li><strong>Formspree, Inc.</strong>, Boston, MA, USA — Verarbeitung der Formulareinsendungen (Demo- und Datenschutz-Anfrageformular). Standardvertragsklauseln bestehen.</li>
+        <li><strong>E-Mail-Anbieter mit Sitz in der EU</strong> — Empfang und Speicherung eingegangener Anfragen.</li>
+      </ul>
+
+      <h2 id="third-country">9. Drittlandübermittlungen</h2>
+      <p>Zwei in den USA ansässige Auftragsverarbeiter sind beteiligt:</p>
+      <ul>
+        <li><strong>GitHub, Inc.</strong> — Hosting und Auslieferung jeder Seite dieser Website. Jeder Seitenaufruf überträgt die in § 3 beschriebenen Zugriffsdaten einschließlich Ihrer vollständigen IP-Adresse. Das gilt unabhängig davon, ob Sie ein Formular nutzen.</li>
+        <li><strong>Formspree, Inc.</strong> — Verarbeitung des Demo- und des Datenschutz-Anfrageformulars, einschließlich der Formularinhalte und der in § 5 beschriebenen Metadaten.</li>
+      </ul>
+      <p>Die Übermittlungen sind durch EU-Standardvertragsklauseln nach Art. 46 Abs. 2 lit. c DSGVO abgesichert. Wir haben die Rechtslage des Empfängerlandes bewertet (Schrems-II-Transfer-Impact-Assessment) und ergreifen ergänzende Maßnahmen, soweit angemessen (TLS bei der Übertragung, Zugriffskontrollen beim Empfänger).</p>
+      <p>Beim Absenden des Demo-Formulars bestätigen Sie diese Übermittlung zusätzlich durch Anhaken der Einwilligungs-Checkbox. Die Übermittlung an unseren Host lässt sich auf diesem Weg nicht vermeiden — sie ist mit dem Abruf jeder Seite dieser Website zwangsläufig verbunden.</p>
+
+      <h2 id="retention">10. Speicherdauer</h2>
+      <p>Wir speichern personenbezogene Daten nur so lange, wie es für die in § 7 genannten Zwecke erforderlich ist oder wie es gesetzlich vorgeschrieben ist (insbesondere deutsche handels- und steuerrechtliche Aufbewahrungspflichten, in der Regel 6 bis 10 Jahre für Buchhaltungsunterlagen). Nach Ablauf der Speicherfrist werden die Daten gelöscht oder — soweit einschlägig — in der Verarbeitung eingeschränkt.</p>
+
+      <h2 id="cookies">11. Cookies &amp; Tracking</h2>
+      <p>Diese Website <strong>setzt keinerlei Cookies</strong>, nutzt weder <code>localStorage</code> noch <code>sessionStorage</code> des Browsers für personenbezogene Daten und verwendet keine Analyse-, Werbe- oder Tracking-Dienste von Drittanbietern. Es gibt keinen Consent-Banner, weil es über das für die Auslieferung der angeforderten Seite unbedingt Erforderliche hinaus nichts gibt, in das eingewilligt werden müsste.</p>
+
+      <h2 id="your-rights">12. Ihre Rechte</h2>
+      <p>Nach der DSGVO stehen Ihnen in Bezug auf Ihre personenbezogenen Daten folgende Rechte zu:</p>
+      <ul>
+        <li><strong>Recht auf Auskunft</strong> (Art. 15) — Bestätigung, ob Sie betreffende personenbezogene Daten verarbeitet werden, sowie eine Kopie dieser Daten.</li>
+        <li><strong>Recht auf Berichtigung</strong> (Art. 16) — Korrektur unrichtiger oder unvollständiger Daten.</li>
+        <li><strong>Recht auf Löschung</strong> (Art. 17) — Löschung Ihrer Daten, wenn einer der Gründe des Art. 17 Abs. 1 vorliegt.</li>
+        <li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18).</li>
+        <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20) — Erhalt Ihrer Daten in einem strukturierten, maschinenlesbaren Format.</li>
+        <li><strong>Widerspruchsrecht</strong> (Art. 21) — Widerspruch gegen eine auf berechtigten Interessen beruhende Verarbeitung aus Gründen, die sich aus Ihrer besonderen Situation ergeben.</li>
+        <li><strong>Recht auf Widerruf der Einwilligung</strong> (Art. 7 Abs. 3) — jederzeit, mit Wirkung für die Zukunft.</li>
+        <li><strong>Beschwerderecht</strong> bei einer Aufsichtsbehörde (Art. 77) — siehe § 13.</li>
+      </ul>
+      <p>Zur Ausübung dieser Rechte nutzen Sie das <a href="#dsar-form">Datenschutz-Anfrageformular</a> unten oder schreiben Sie einfach eine E-Mail an <code>ai4grc@dube.eu</code> — beide Wege sind gleichermaßen gültig, und der E-Mail-Weg ist mit keiner Drittlandübermittlung verbunden. Wir antworten unverzüglich, spätestens jedoch innerhalb eines Monats nach Eingang (Art. 12 Abs. 3 DSGVO).</p>
+
+      <h2 id="supervisory-authority">13. Aufsichtsbehörde</h2>
+      <p>Die für den Verantwortlichen zuständige Aufsichtsbehörde ist:</p>
+      <p><strong>Der Hessische Beauftragte für Datenschutz und Informationsfreiheit</strong><br/>
+      Gustav-Stresemann-Ring 1<br/>
+      65189 Wiesbaden, Deutschland<br/>
+      Telefon: +49 611 1408-0<br/>
+      Web: <a href="https://datenschutz.hessen.de" rel="noopener" target="_blank">datenschutz.hessen.de</a></p>
+
+      <h2 id="automated-decisions">14. Automatisierte Entscheidungsfindung</h2>
+      <p>Wir führen keine automatisierte Entscheidungsfindung einschließlich Profiling durch, die Ihnen gegenüber rechtliche Wirkung entfaltet oder Sie in ähnlicher Weise erheblich beeinträchtigt im Sinne von Art. 22 DSGVO.</p>
+
+      <h2 id="changes">15. Änderungen dieser Erklärung</h2>
+      <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren, um Änderungen unserer Verarbeitung oder der Rechtslage abzubilden. Das Datum unter „Stand" oben auf dieser Seite kennzeichnet die aktuelle Fassung. Wesentliche Änderungen werden kenntlich gemacht, soweit sie bestehende betroffene Personen berühren.</p>
+
+      <h2 id="dsar-form">16. Datenschutzanfrage stellen</h2>
+      <p>Mit diesem Formular können Sie Ihre Rechte nach § 12 ausüben, eine Einwilligung widerrufen oder eine datenschutzbezogene Frage stellen. Einsendungen laufen über Formspree (siehe § 6) und erreichen unser Datenschutz-Postfach. Wenn Sie keinen US-Auftragsverarbeiter nutzen möchten, schreiben Sie direkt an <code>ai4grc@dube.eu</code> — wir behandeln das als gleichermaßen gültige Anfrage.</p>
+
+      <div class="callout callout-warn">
+        <strong>Identitätsprüfung.</strong> Um eine unbefugte Offenlegung zu verhindern, können wir Sie bitten, Ihre Identität nachzuweisen, bevor wir eine Anfrage zu bei uns gespeicherten personenbezogenen Daten bearbeiten (Art. 12 Abs. 6 DSGVO). Was dafür nötig ist, erläutern wir in unserer ersten Antwort.
+      </div>
+
+      <form class="dsar-form" id="dsarForm" action="https://formspree.io/f/xgonvbpd" method="POST">
+        <div class="body">
+          <div class="fld">
+            <label for="df-subject">Art der Anfrage</label>
+            <select id="df-subject" name="request_type" required>
+              <option value="access">Auskunft (Art. 15)</option>
+              <option value="rectification">Berichtigung (Art. 16)</option>
+              <option value="erasure">Löschung (Art. 17)</option>
+              <option value="restriction">Einschränkung (Art. 18)</option>
+              <option value="portability">Datenübertragbarkeit (Art. 20)</option>
+              <option value="objection">Widerspruch (Art. 21)</option>
+              <option value="withdraw-consent">Widerruf der Einwilligung (Art. 7 Abs. 3)</option>
+              <option value="complaint">Datenschutzbeschwerde</option>
+              <option value="other">Sonstiges</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="fld">
+              <label for="df-name">Name</label>
+              <input id="df-name" type="text" name="name" required autocomplete="name" placeholder="Erika Mustermann"/>
+            </div>
+            <div class="fld">
+              <label for="df-email">E-Mail</label>
+              <input id="df-email" type="email" name="email" required autocomplete="email" placeholder="erika@firma.de"/>
+            </div>
+          </div>
+          <div class="fld">
+            <label for="df-msg">Ihr Anliegen</label>
+            <textarea id="df-msg" name="message" maxlength="2000" required placeholder="Beschreiben Sie kurz Ihr Anliegen. Geben Sie sensible Daten nur an, wenn es unbedingt erforderlich ist."></textarea>
+          </div>
+          <div class="fld fld-consent">
+            <label class="consent" for="df-consent">
+              <input id="df-consent" type="checkbox" name="acknowledged" value="yes"/>
+              <span>Mir ist bekannt, dass mit dem Absenden dieses Formulars die obigen Daten unter Standardvertragsklauseln an Formspree (USA) übermittelt werden. Die Bearbeitung Ihrer Anfrage selbst erfordert keine Einwilligung — siehe <a href="#privacy-request-form">§ 6</a>. Um die Übermittlung ganz zu vermeiden, schreiben Sie stattdessen an <code>ai4grc@dube.eu</code>.</span>
+            </label>
+          </div>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"/>
+          <input type="hidden" name="_subject" value="DubeAI — Privacy request (DE)"/>
+          <button type="submit" class="submit">Anfrage senden
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <span class="note">Wir antworten innerhalb eines Monats gemäß Art. 12 Abs. 3 DSGVO.</span>
+        </div>
+        <div class="ok" role="status" aria-live="polite">
+          <div class="ok-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+          </div>
+          <h4>Anfrage eingegangen.</h4>
+          <p>Wir melden uns innerhalb eines Monats, in der Regel deutlich früher.</p>
+        </div>
+      </form>
+
+      <div class="callout" style="margin-top:32px">
+        Siehe auch: <a href="imprint.html">Impressum</a> · <a href="terms.html">Nutzungsbedingungen</a> · <a href="terms-of-service.html">Vertragsbedingungen (Terms of Service)</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="ft">
+    <div class="ftl">
+      <span class="lockup sm">
+        <img src="../assets/lockup-horizontal.png" alt="DubeAI" width="608" height="152"/>
+      </span>
+      <span>© 2026 · DubeAI · Bad Homburg, Deutschland</span>
+    </div>
+    <div class="ftr">
+      <a href="imprint.html">Impressum</a>
+      <a href="privacy.html" aria-current="page">Datenschutz</a>
+      <a href="terms.html">Nutzungsbedingungen</a>
+      <a href="terms-of-service.html">Vertragsbedingungen</a>
+      <a href="../privacy.html" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── Formspree async submit (DSAR form) ───
+// Follows Formspree's official Vanilla JS AJAX pattern:
+// https://help.formspree.io/hc/en-us/articles/360013470814
+(function(){
+  var f = document.getElementById('dsarForm');
+  if (!f) return;
+  var btn = f.querySelector('.submit');
+  var DEFAULT_BTN_HTML = btn.innerHTML;
+
+  var errLine = document.createElement('div');
+  errLine.id = 'df-err';
+  errLine.setAttribute('role','alert');
+  errLine.style.cssText = 'display:none;margin-bottom:12px;padding:10px 12px;border:1px solid #c44;background:#fef0f0;color:#a02;font-size:13px;line-height:1.45;font-family:Inter Tight,sans-serif';
+  btn.parentNode.insertBefore(errLine, btn);
+  function showError(msg){ errLine.textContent = msg; errLine.style.display = 'block'; }
+  function hideError(){ errLine.style.display = 'none'; }
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    hideError();
+    btn.disabled = true;
+    btn.innerHTML = 'Wird gesendet…';
+
+    fetch(f.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(f)
+    }).then(function(r){
+      return r.json().then(function(j){ return { ok: r.ok, status: r.status, body: j }; })
+                     .catch(function(){ return { ok: r.ok, status: r.status, body: null }; });
+    }).then(function(res){
+      if (res.ok) {
+        f.classList.add('sent');
+        return;
+      }
+      btn.disabled = false;
+      btn.innerHTML = DEFAULT_BTN_HTML;
+      var msg = 'Übermittlung fehlgeschlagen (HTTP ' + res.status + ').';
+      if (res.body && res.body.errors && res.body.errors.length) {
+        msg = res.body.errors.map(function(x){ return x.message || x.code; }).join(' · ');
+      } else if (res.body && res.body.error) {
+        msg = res.body.error;
+      }
+      showError(msg);
+    }).catch(function(err){
+      btn.disabled = false;
+      btn.innerHTML = DEFAULT_BTN_HTML;
+      showError('Netzwerkfehler: ' + (err && err.message ? err.message : 'Anfrage fehlgeschlagen'));
+    });
+  });
+})();
+
+// ─── TOC scroll-spy ───
+(function(){
+  var links = document.querySelectorAll('#tocList a');
+  if (!links.length) return;
+  var byId = {};
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if (sec) byId[id] = a;
+  });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var a = byId[e.target.id];
+        if (a){
+          links.forEach(function(l){ l.classList.remove('active'); });
+          a.classList.add('active');
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+  Object.keys(byId).forEach(function(id){
+    var sec = document.getElementById(id);
+    if (sec) obs.observe(sec);
+  });
+})();
+</script>
+
+</body>
+</html>
